@@ -4,6 +4,11 @@
 
         <umb-box-content>
 
+            <div ng-if="vm.licenseEnded" style="text-align: center">
+                <h3>YuzuDelivery.Umbraco.Import beta has ended</h3>
+                <p>download the full version from <a href="https://balanced.dev">https://balanced.dev</a></p>
+            </div>
+
             <div class="yuzu-import-breadbrumbs" ng-if="vm.breadcrumbs.length > 0">
                 <span class="yuzu-import-breadbrumb"><a href="" ng-click="vm.returnToListing()"><i class="icon-home"></i></a></span>
                 <span ng-repeat="breadcrumb in vm.breadcrumbs" class="yuzu-import-breadbrumb">

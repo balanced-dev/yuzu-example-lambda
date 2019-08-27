@@ -28,6 +28,7 @@
     var refreshData = function () {
         yuzuImportResources.list(vm.page.pageNumber, vm.page.pageSize, vm.page.filter).then(function (response) {
             vm.items = response.data.items;
+            vm.licenseEnded = response.data.licenseEnded;
             vm.page.totalPages = response.data.pageCount;
             if (vm.page.pageNumber > vm.page.totalPages) {
                 vm.page.pageNumber = vm.page.totalPages;
