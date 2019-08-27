@@ -11,7 +11,7 @@
     vm.page = {};
     vm.page.pageNumber = 1;
     vm.page.totalPages = 1;
-    vm.page.pageSize = 10;
+    vm.page.pageSize = 15;
     vm.page.filter = '';
 
     vm.breadcrumbs = [];
