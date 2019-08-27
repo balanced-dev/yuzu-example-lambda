@@ -22,9 +22,6 @@
             },
             {
                 "$ref": "/parTestimonials"
-            },
-            {
-                "$ref": "/parFaq"
             }
         ]
     },

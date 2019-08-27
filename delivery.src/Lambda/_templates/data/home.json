@@ -310,24 +310,16 @@
                 "title": "Lambda",
                 "navLinks": [
                     {
-                        "link": {
-                            "label": "About"
-                        }
+                        "label": "About"
                     },
                     {
-                        "link": {
-                            "label": "Privacy"
-                        }
+                        "label": "Privacy"
                     },
                     {
-                        "link": {
-                            "label": "Terms"
-                        }
+                        "label": "Terms"
                     },
                     {
-                        "link": {
-                            "label": "Blog"
-                        }
+                        "label": "Blog"
                     }
                 ]
             },
@@ -335,24 +327,16 @@
                 "title": "Products",
                 "navLinks": [
                     {
-                        "link": {
-                            "label": "Publish"
-                        }
+                        "label": "Publish"
                     },
                     {
-                        "link": {
-                            "label": "Outreach"
-                        }
+                        "label": "Outreach"
                     },
                     {
-                        "link": {
-                            "label": "Collaborate"
-                        }
+                        "label": "Collaborate"
                     },
                     {
-                        "link": {
-                            "label": "Global"
-                        }
+                        "label": "Global"
                     }
                 ]
             },
@@ -360,48 +344,32 @@
                 "title": "Community",
                 "navLinks": [
                     {
-                        "link": {
-                            "label": "Help forum"
-                        }
+                        "label": "Help forum"
                     },
                     {
-                        "link": {
-                            "label": "Slack channel"
-                        }
+                        "label": "Slack channel"
                     },
                     {
-                        "link": {
-                            "label": "Support"
-                        }
+                        "label": "Support"
                     },
                     {
-                        "link": {
-                            "label": "Policies"
-                        }
+                        "label": "Policies"
                     }
                 ]
             }
         ],
         "socialLinks": [
             {
-                "link": {
-                    "label": "facebook"
-                }
+                "label": "facebook"
             },
             {
-                "link": {
-                    "label": "twitter"
-                }
+                "label": "twitter"
             },
             {
-                "link": {
-                    "label": "google-plus"
-                }
+                "label": "google-plus"
             },
             {
-                "link": {
-                    "label": "dribbble"
-                }
+                "label": "dribbble"
             }
         ],
         "_ref": "/parSiteFooter",
