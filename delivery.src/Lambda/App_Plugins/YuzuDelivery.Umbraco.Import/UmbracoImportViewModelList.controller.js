@@ -104,7 +104,7 @@
 
     vm.openContentDialog = function (item, property) {
         editorService.open({
-            view: '../App_Plugins/YuzuDelivery.UmbracoImport/contentDialog/contentDialog.html',
+            view: '../App_Plugins/YuzuDelivery.Umbraco.Import/contentDialog/contentDialog.html',
             size: 'small',
             dialogData: {
                 viewmodel: item.name,
@@ -121,7 +121,7 @@
 
     vm.openSettingsDialog = function (viewmodel) {
         editorService.open({
-            view: '../App_Plugins/YuzuDelivery.UmbracoImport/settingsDialog/settingsDialog.html',
+            view: '../App_Plugins/YuzuDelivery.Umbraco.Import/settingsDialog/settingsDialog.html',
             size: 'small',
             dialogData: {
                 viewmodel: viewmodel,

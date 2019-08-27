@@ -265,102 +265,146 @@
                         "yuzu-path": "/grid/rows[4]/items[0]"
                     }
                 ]
-            },
+            }
+        ]
+    },
+    "header": {
+        "companyName": "Lambda",
+        "nav": {
+            "navLinks": [
+                {
+                    "label": "Services",
+                    "href": "#services"
+                },
+                {
+                    "label": "Features",
+                    "href": "#features"
+                },
+                {
+                    "label": "Reviews",
+                    "href": "#reviews"
+                },
+                {
+                    "label": "Pricing",
+                    "href": "#pricing"
+                },
+                {
+                    "label": "FAQ",
+                    "href": "#faq"
+                }
+            ],
+            "_ref": "/parSiteNav",
+            "yuzu-path": "/header/nav"
+        },
+        "signUp": {
+            "label": "Sign up"
+        },
+        "_ref": "/parSiteHeader",
+        "yuzu-path": "/header"
+    },
+    "footer": {
+        "title": "About Lambda",
+        "text": ">Magnis modipsae que voloratati andigen daepeditem quiate conecus aut labore.Laceaque quiae sitiorem rest non restibusaes maio es dem tumquam explabo.",
+        "navAreas": [
             {
-                "items": [
+                "title": "Lambda",
+                "navLinks": [
                     {
-                        "title": "ANSWERS TO COMMON QUESTIONS",
-                        "subtitle": "Frequently asked questions",
-                        "items": [
-                            {
-                                "title": "Lorem ipsum dolor sit amet?",
-                                "text": "Magnis modipsae que voloratati andigen daepeditem quiate conecus aut labore. Laceaque quiae sitiorem rest non restibusaes maio es dem tumquam explabo."
-                            },
-                            {
-                                "title": "Lorem sit andigen daepeditem amet?",
-                                "text": "Magnis modipsae que voloratati andigen daepeditem quiate conecus aut labore. Laceaque quiae sitiorem rest non restibusaes maio es dem tumquam explabo."
-                            },
-                            {
-                                "title": "Lorem ipsum dolor sit andigen daepeditem amet?",
-                                "text": "Magnis modipsae que voloratati andigen daepeditem quiate conecus aut labore. Laceaque quiae sitiorem rest non restibusaes maio es dem tumquam explabo."
-                            },
-                            {
-                                "title": "Lorem sit andigen daepeditem amet dem tumquam explabo?",
-                                "text": "Magnis modipsae que voloratati andigen daepeditem quiate conecus aut labore. Laceaque quiae sitiorem rest non restibusaes maio es dem tumquam explabo."
-                            },
-                            {
-                                "title": "Lorem sit andigen daepeditem amet?",
-                                "text": "Magnis modipsae que voloratati andigen daepeditem quiate conecus aut labore. Laceaque quiae sitiorem rest non restibusaes maio es dem tumquam explabo."
-                            },
-                            {
-                                "title": "Lorem sit daepeditem amet?",
-                                "text": "Magnis modipsae que voloratati andigen daepeditem quiate conecus aut labore. Laceaque quiae sitiorem rest non restibusaes maio es dem tumquam explabo."
-                            }
-                        ],
-                        "moreTitle": "Still have more questions?",
-                        "moreText": "Magnis modipsae que voloratati andigen daepeditem quiate conecus aut labore.",
-                        "moreLink": {
-                            "label": "Get in touch"
-                        },
-                        "_ref": "/parFaq",
-                        "yuzu-path": "/grid/rows[5]/items[0]"
+                        "link": {
+                            "label": "About"
+                        }
+                    },
+                    {
+                        "link": {
+                            "label": "Privacy"
+                        }
+                    },
+                    {
+                        "link": {
+                            "label": "Terms"
+                        }
+                    },
+                    {
+                        "link": {
+                            "label": "Blog"
+                        }
                     }
                 ]
             },
             {
-                "items": [
+                "title": "Products",
+                "navLinks": [
                     {
-                        "title": "Grow your business with Lambda",
-                        "text": "Magnis modipsae que voloratati andigen daepeditem quiate conecus aut labore. Laceaque quiae sitiorem rest non restibusaes maio es dem tumquam explabo.",
-                        "backgroundImage": {
-                            "src": "/_client/img/parallex.jpg"
-                        },
-                        "form": {
-                            "testForm": {
-                                "isSubmitted": false,
-                                "submittedMessage": "Your submitted message here",
-                                "validation": {
-                                    "title": "Form Builder Validation",
-                                    "textHtml": ""
-                                },
-                                "fields": [
-                                    {
-                                        "placeholder": "Full name",
-                                        "_ref": "/parFormTextInput"
-                                    },
-                                    {
-                                        "placeholder": "Website",
-                                        "_ref": "/parFormTextInput"
-                                    },
-                                    {
-                                        "type": "email",
-                                        "placeholder": "Email address",
-                                        "_ref": "/parFormTextInput"
-                                    },
-                                    {
-                                        "name": "message",
-                                        "label": "Message",
-                                        "value": "",
-                                        "id": "",
-                                        "placeholder": "Write your message here",
-                                        "isRequired": true,
-                                        "isDisabled": false,
-                                        "isReadonly": false,
-                                        "_ref": "/parFormTextArea",
-                                        "yuzu-path": "/grid/rows[6]/items[0]/form/testForm/fields[3]"
-                                    }
-                                ],
-                                "submitButtonLabel": "Create your account",
-                                "_ref": "/parFormBuilder"
-                            },
-                            "_ref": "/parForm",
-                            "yuzu-path": "/grid/rows[6]/items[0]/form"
-                        },
-                        "_ref": "/parCta",
-                        "yuzu-path": "/grid/rows[6]/items[0]"
+                        "link": {
+                            "label": "Publish"
+                        }
+                    },
+                    {
+                        "link": {
+                            "label": "Outreach"
+                        }
+                    },
+                    {
+                        "link": {
+                            "label": "Collaborate"
+                        }
+                    },
+                    {
+                        "link": {
+                            "label": "Global"
+                        }
+                    }
+                ]
+            },
+            {
+                "title": "Community",
+                "navLinks": [
+                    {
+                        "link": {
+                            "label": "Help forum"
+                        }
+                    },
+                    {
+                        "link": {
+                            "label": "Slack channel"
+                        }
+                    },
+                    {
+                        "link": {
+                            "label": "Support"
+                        }
+                    },
+                    {
+                        "link": {
+                            "label": "Policies"
+                        }
                     }
                 ]
             }
-        ]
+        ],
+        "socialLinks": [
+            {
+                "link": {
+                    "label": "facebook"
+                }
+            },
+            {
+                "link": {
+                    "label": "twitter"
+                }
+            },
+            {
+                "link": {
+                    "label": "google-plus"
+                }
+            },
+            {
+                "link": {
+                    "label": "dribbble"
+                }
+            }
+        ],
+        "_ref": "/parSiteFooter",
+        "yuzu-path": "/footer"
     }
 }

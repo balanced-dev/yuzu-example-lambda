@@ -6,8 +6,7 @@
             "/parPageHero",
             "/parPricing",
             "/parServices",
-            "/parTestimonials",
-            "/parFaq"
+            "/parTestimonials"
         ]
     }
 }

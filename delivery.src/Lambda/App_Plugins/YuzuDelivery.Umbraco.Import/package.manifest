@@ -1,17 +1,17 @@
 {   
 	css: [
-	  "~/App_Plugins/YuzuDelivery.UmbracoImport/UmbracoImportViewModel.css"
+	  "~/App_Plugins/YuzuDelivery.Umbraco.Import/UmbracoImportViewModel.css"
   ],
   javascript: [
-    "~/App_Plugins/YuzuDelivery.UmbracoImport/UmbracoImportViewModelList.controller.js",
-    "~/App_Plugins/YuzuDelivery.UmbracoImport/contentDialog/contentDialog.controller.js",
-    "~/App_Plugins/YuzuDelivery.UmbracoImport/settingsDialog/settingsDialog.controller.js"
+    "~/App_Plugins/YuzuDelivery.Umbraco.Import/UmbracoImportViewModelList.controller.js",
+    "~/App_Plugins/YuzuDelivery.Umbraco.Import/contentDialog/contentDialog.controller.js",
+    "~/App_Plugins/YuzuDelivery.Umbraco.Import/settingsDialog/settingsDialog.controller.js"
   ],
 	"dashboards": [
     {
       "alias": "YuzuDeliveryUmbracoImport",
       "sections": [ "settings" ],
-      "view": "~/App_Plugins/YuzuDelivery.UmbracoImport/UmbracoImportViewModelList.html"
+      "view": "~/App_Plugins/YuzuDelivery.Umbraco.Import/UmbracoImportViewModelList.html"
     }
   ]
 }
