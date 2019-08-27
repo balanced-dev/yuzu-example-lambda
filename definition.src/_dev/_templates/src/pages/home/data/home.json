@@ -35,20 +35,6 @@
                         "$ref": "/parPricing"
                     }
                 ]
-            },
-            {
-                "items": [
-                    {
-                        "$ref": "/parFaq"
-                    }
-                ]
-            },
-            {
-                "items": [
-                    {
-                        "$ref": "/parCta"
-                    }
-                ]
             }
         ]
     }
