@@ -1,0 +1,103 @@
+{
+    "title": "About Lambda",
+    "text": ">Magnis modipsae que voloratati andigen daepeditem quiate conecus aut labore.Laceaque quiae sitiorem rest non restibusaes maio es dem tumquam explabo.",
+    "navAreas": [
+        {
+            "title": "Lambda",
+            "navLinks": [
+                {
+                    "link": {
+                        "label": "About"
+                    }
+                },
+                {
+                    "link": {
+                        "label": "Privacy"
+                    }
+                },
+                {
+                    "link": {
+                        "label": "Terms"
+                    }
+                },
+                {
+                    "link": {
+                        "label": "Blog"
+                    }
+                }
+            ]
+        },
+        {
+            "title": "Products",
+            "navLinks": [
+                {
+                    "link": {
+                        "label": "Publish"
+                    }
+                },
+                {
+                    "link": {
+                        "label": "Outreach"
+                    }
+                },
+                {
+                    "link": {
+                        "label": "Collaborate"
+                    }
+                },
+                {
+                    "link": {
+                        "label": "Global"
+                    }
+                }
+            ]
+        },
+        {
+            "title": "Community",
+            "navLinks": [
+                {
+                    "link": {
+                        "label": "Help forum"
+                    }
+                },
+                {
+                    "link": {
+                        "label": "Slack channel"
+                    }
+                },
+                {
+                    "link": {
+                        "label": "Support"
+                    }
+                },
+                {
+                    "link": {
+                        "label": "Policies"
+                    }
+                }
+            ]
+        }
+    ],
+    "socialLinks": [
+        {
+            "link": {
+                "label": "facebook"
+            }
+        },
+        {
+            "link": {
+                "label": "twitter"
+            }
+        },
+        {
+            "link": {
+                "label": "google-plus"
+            }
+        },
+        {
+            "link": {
+                "label": "dribbble"
+            }
+        }
+    ]
+}

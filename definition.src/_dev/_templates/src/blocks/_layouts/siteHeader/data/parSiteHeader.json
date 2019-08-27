@@ -1,0 +1,9 @@
+{
+    "companyName": "Lambda",
+    "nav": {
+        "$ref": "/parSiteNav"
+    },
+    "signUp": {
+        "label": "Sign up"
+    }
+}

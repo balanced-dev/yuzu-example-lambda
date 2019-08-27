@@ -1,0 +1,18 @@
+{
+    "parGrid": {
+        "refs": {
+            "/rows/items": [
+                "/parCta",
+                "/parFeature",
+                "/parPageHero",
+                "/parPricing",
+                "/parServices",
+                "/parTestimonials",
+                "/parFaq"
+            ]
+        }
+    },
+    "anyOfTypes": [
+        "parGrid"
+    ]
+}

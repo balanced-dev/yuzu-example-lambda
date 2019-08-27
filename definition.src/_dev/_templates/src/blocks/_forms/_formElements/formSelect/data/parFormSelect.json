@@ -1,0 +1,43 @@
+{
+    "formSelectLabel": "Form Select Label",
+    "formSelectName": "",
+    "formSelectID": "",
+    "isFormSelectRequired": false,
+    "isFormSelectDisabled": false,
+    "isFormSelectInvalid": false,
+    "isFormSelectReadonly": false,
+    "formSelectOptions": [
+        {
+            "option": {
+                "optionIsSelected": true,
+                "optionValue": "1",
+                "optionLabel": "Option 1"
+            }
+        },
+        {
+            "option": {
+                "optionValue": "2",
+                "optionLabel": "Option 2"
+            }
+        },
+        {
+            "option": {
+                "optionValue": "3",
+                "optionLabel": "Option 3"
+            }
+        },
+        {
+            "option": {
+                "optionValue": "4",
+                "optionLabel": "Option 4"
+            }
+        },
+        {
+            "option": {
+                "optionValue": "5",
+                "optionLabel": "Option 5"
+            }
+        }
+    ],
+    "modifier": ""
+}

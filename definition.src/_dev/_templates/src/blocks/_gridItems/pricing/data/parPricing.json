@@ -1,0 +1,67 @@
+{
+    "title": "Pay only when you need",
+    "subtitle": "Simple pricing",
+    "text": "Nam liber tempor cum eleifend option congue nihil imper. Nam liber tempor cum soluta nobis.",
+    "items": [
+        {
+            "title": "Basic",
+            "price": "$99",
+            "period": "per month",
+            "text": [
+                "1 campaign",
+                "20 media submissions",
+                "Pitch templates",
+                "Basic support"
+            ],
+            "link": {
+                "label": "Get Started"
+            }
+        },
+        {
+            "title": "Startup",
+            "price": "$159",
+            "period": "monthly",
+            "text": [
+                "5 campaigns",
+                "50 media submissions",
+                "Pitch templates",
+                "Priority support"
+            ],
+            "link": {
+                "label": "Get Started"
+            },
+            "primary": true
+        },
+        {
+            "title": "Growth",
+            "price": "$499",
+            "period": "per month",
+            "text": [
+                "1 campaign",
+                "20 media submissions",
+                "Pitch templates",
+                "Basic support"
+            ],
+            "link": {
+                "label": "Get Started"
+            }
+        }
+    ],
+    "reasons": [
+        {
+            "icon": "umbrella",
+            "title": "Money-back guarantee",
+            "text": "100% money back guarantee within 14 days. No worries."
+        },
+        {
+            "icon": "shield",
+            "title": "Secure payment",
+            "text": "Money transfers are protected with a 256-bit SSL Protocol."
+        },
+        {
+            "icon": "credit-card",
+            "title": "Payment methods",
+            "text": "Pay with multiple payment methods — credit card, bank transfer or PayPal."
+        }
+    ]
+}

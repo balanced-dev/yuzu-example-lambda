@@ -1,0 +1,55 @@
+{
+    "items": [
+        {
+            "title": "Get published in top brands",
+            "text": "Nam liber tempor cum eleifend option congue nihil imper. Nam liber tempor cum soluta nobis.",
+            "features": [
+                "Lorem ipsum dolor sit amet.",
+                "Aenean commodo ligula eget dolor.",
+                "Aenean massa.",
+                "Cum sociis natoque penatibus mus."
+            ],
+            "link": {
+                "label": "See our partners"
+            },
+            "image": {
+                "src": "/_client/img/feature1.png"
+            },
+            "isRightAligned": false
+        },
+        {
+            "title": "Reach millions of people",
+            "text": "Nam liber tempor cum eleifend option congue nihil imper. Nam liber tempor cum soluta nobis.",
+            "features": [
+                "Lorem ipsum dolor sit amet.",
+                "Aenean commodo ligula eget dolor.",
+                "Aenean massa.",
+                "Cum sociis natoque penatibus mus."
+            ],
+            "link": {
+                "label": "Sign up now"
+            },
+            "image": {
+                "src": "/_client/img/feature2.png"
+            },
+            "isRightAligned": true
+        },
+        {
+            "title": "Get published in top brands",
+            "text": "Nam liber tempor cum eleifend option congue nihil imper. Nam liber tempor cum soluta nobis.",
+            "features": [
+                "Lorem ipsum dolor sit amet.",
+                "Aenean commodo ligula eget dolor.",
+                "Aenean massa.",
+                "Cum sociis natoque penatibus mus."
+            ],
+            "link": {
+                "label": "Contact Us"
+            },
+            "image": {
+                "src": "/_client/img/feature3.png"
+            },
+            "isRightAligned": false
+        }
+    ]
+}

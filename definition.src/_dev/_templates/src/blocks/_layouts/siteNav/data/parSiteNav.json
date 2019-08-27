@@ -1,0 +1,24 @@
+{
+    "navLinks": [
+        {
+            "label": "Services",
+            "href": "#services"
+        },
+        {
+            "label": "Features",
+            "href": "#features"
+        },
+        {
+            "label": "Reviews",
+            "href": "#reviews"
+        },
+        {
+            "label": "Pricing",
+            "href": "#pricing"
+        },
+        {
+            "label": "FAQ",
+            "href": "#faq"
+        }
+    ]
+}

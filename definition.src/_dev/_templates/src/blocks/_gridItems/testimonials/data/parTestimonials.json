@@ -1,0 +1,33 @@
+{
+    "subtitle": "Loved by thousands of people",
+    "title": "What our customers say",
+    "items": [
+        {
+            "image": {
+                "src": "/_client/img/client-1.jpg"
+            },
+            "quote": "Praesent vulputate dolor velit, in condimentum odio pellentesin condimentum odio pellentesque libero.",
+            "name": "Ryan Siddle",
+            "company": "Google Design",
+            "stars": 4.5
+        },
+        {
+            "image": {
+                "src": "/_client/img/client-2.jpg"
+            },
+            "quote": "Praesent vulputate dolor velit, in condimentum odio pellentesin condimentum odio pellentesque libero.",
+            "name": "Ameli Mao",
+            "company": "Developer",
+            "stars": 4.5
+        },
+        {
+            "image": {
+                "src": "/_client/img/client-3.jpg"
+            },
+            "quote": "Praesent vulputate dolor velit, in condimentum odio pellentesin condimentum odio pellentesque libero.",
+            "name": "Kathrine Jones",
+            "company": "DropBox",
+            "stars": 4.5
+        }
+    ]
+}

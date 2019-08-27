@@ -1,0 +1,179 @@
+﻿<div name="ABCatalogContentListForm" class="yuzu-import" ng-controller="Yuzu.Delivery.UmbracoImportViewModel.List as vm">
+
+    <umb-box>
+
+        <umb-box-content>
+
+            <div class="yuzu-import-breadbrumbs" ng-if="vm.breadcrumbs.length > 0">
+                <span class="yuzu-import-breadbrumb"><a href="" ng-click="vm.returnToListing()"><i class="icon-home"></i></a></span>
+                <span ng-repeat="breadcrumb in vm.breadcrumbs" class="yuzu-import-breadbrumb">
+                    <a href="" ng-click="vm.editItem(breadcrumb)" ng-if="breadcrumb != vm.viewmodel">
+                        {{breadcrumb}}
+                    </a>
+                    <a ng-if="breadcrumb == vm.viewmodel" ng-click="vm.openSettingsDialog(breadcrumb)">
+                        <i class="icon-settings"></i>
+                        <strong>{{breadcrumb}}</strong>
+                    </a>
+                </span>
+            </div>
+
+            <div class="umb-table-condensed" ng-if="vm.items && !vm.propertyGroups">
+                <div class="umb-table-head">
+                    <div class="umb-table-row">
+                        <div class="umb-table-cell not-fixed">
+                            Yuzu Viewmodel
+                        </div>
+                        <div class="umb-table-cell mapped">
+                            Mapped
+                        </div>
+                        <div class="umb-table-cell">
+                            Umbraco DocumentType
+                        </div>
+                        <div class="umb-table-cell">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="umb-table-body">
+                    <div class="umb-table-row" ng-repeat="item in vm.items">
+                        <div class="umb-table-cell not-fixed">
+                            <a href ng-click="vm.editItem(item.name)">
+                                {{item.name}}
+                            </a>
+                        </div>
+                        <div class="umb-table-cell mapped">
+                            <i ng-if="item.allMapped" class="icon icon-check color-green"></i>
+                            <i ng-if="!item.allMapped" class="icon icon-delete color-red"></i>
+                        </div>
+                        <div class="umb-table-cell">
+                            {{item.documentType}}
+                        </div>
+                        <div class="umb-table-cell">
+                            <button class="btn btn-success" ng-if="!item.allMapped" ng-click="vm.mapViewmodel(item.name)" type="button">
+                                <span>Create</span>
+                            </button>
+                            <a class="btn" ng-if="item.isPage && item.allMapped" ng-click="vm.openContentDialog(item)">
+                                <span>Content Import</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="umb-table-condensed" ng-if="vm.propertyGroups">
+                <div class="umb-table-head">
+                    <div class="umb-table-row">
+                        <div class="umb-table-cell not-fixed">
+                            Yuzu Property Type
+                        </div>
+                        <div class="umb-table-cell">
+                            Yuzu Property Name
+                        </div>
+                        <div class="umb-table-cell mapped">
+                            Mapped
+                        </div>
+                        <div class="umb-table-cell">
+                            Umbraco Property Name
+                        </div>
+                        <div class="umb-table-cell">
+                            Umbraco Property Type
+                        </div>
+                        <div class="umb-table-cell"></div>
+                    </div>
+                </div>
+                <div ng-repeat="group in vm.propertyGroups">
+                    <h6 class="product-group">Group : {{group.name}}</h6>
+                    <div class="umb-table-body">
+                        <div class="umb-table-row" ng-repeat="property in group.properties">
+                            <div class="umb-table-cell block-types not-fixed">
+
+                                <span ng-if="property.config.isList">List of </span>
+                                <a href ng-if="property.config.isViewModel" ng-click="vm.editItem(property.config.typeName)">
+                                    <strong>{{property.config.typeName}}</strong>
+                                </a>
+                                <span ng-if="!property.config.isViewModel && !property.config.isEnum">{{property.config.typeName}}</span>
+
+                                <div ng-if="property.config.allowedTypes.length > 0">
+                                    <div ng-repeat="type in property.config.allowedTypes">
+                                        <a href ng-click="vm.editItem(type)">
+                                            <strong>{{type}}</strong><span ng-if="!$last">,</span>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div ng-if="property.config.isEnum">
+                                    Enum: 
+                                    <span ng-repeat="value in property.config.allowedValues">
+                                        <strong>{{value}}</strong><span ng-if="!$last">,</span>
+                                    </span>
+                                </div>
+
+                            </div>
+                            <div class="umb-table-cell">
+                                {{property.viewmodelPropertyName}}
+                            </div>
+                            <div class="umb-table-cell mapped">
+                                <i ng-if="property.isMapped" class="icon icon-check color-green"></i>
+                                <i ng-if="!property.isMapped" class="icon icon-delete color-red"></i>
+                            </div>
+                            <div class="umb-table-cell">
+                                {{property.contentPropertyTypeName}}
+                            </div>
+                            <div class="umb-table-cell">
+                                <select ng-model="property.contentDatatypeDefinitionId">
+                                    <option ng-repeat="option in vm.types" ng-selected="property.contentDatatypeDefinitionId == option.id" ng-value="{{option.id}}">{{option.name}}</option>
+                                </select>
+                            </div>
+                            <div class="umb-table-cell">
+                                <button class="btn btn-success" ng-click="vm.updateProperty(property)" type="button">
+                                    <span>Save</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex justify-center" ng-if="vm.items && !vm.propertyGroups">
+                <!-- Pagination -->
+                <umb-pagination ng-if="vm.page.totalPages"
+                                page-number="vm.page.pageNumber"
+                                total-pages="vm.page.totalPages"
+                                on-next="vm.nextPage"
+                                on-prev="vm.prevPage"
+                                on-go-to-page="vm.goToPage">
+                </umb-pagination>
+            </div>
+
+        </umb-box-content>
+    </umb-box>
+
+
+    <umb-editor-footer>
+
+        <umb-editor-footer-content-right ng-if="vm.propertyGroups">
+
+            <button class="btn" ng-click="vm.returnToListing()"
+                    type="button">
+                <span>Return to list</span>
+            </button>
+
+            <button type="button" class="btn btn-success" ng-click="vm.mappAllProperties()"
+                    button-style="success">
+                <span>Map All Properties</span>
+            </button>
+
+        </umb-editor-footer-content-right>
+
+        <umb-editor-footer-content-right ng-if="!vm.propertyGroups">
+
+            <button type="button" class="btn btn-success" ng-click="vm.mapAllViewmodels()"
+                    button-style="success">
+                <span>Map All Viewmodels</span>
+            </button>
+
+        </umb-editor-footer-content-right>
+
+    </umb-editor-footer>
+
+</div>

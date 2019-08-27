@@ -1,0 +1,8 @@
+{
+    "siteHeader": {
+        "$ref": "/parSiteHeader"
+    },
+    "siteFooter": {
+        "$ref": "/parSiteFooter"
+    }
+}

@@ -1,0 +1,17 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "description": "",
+    "type": "array",
+    "items": {
+        "anyOf": [
+            {
+                "$ref": "/parFormTextInput"
+            },
+            {
+                "$ref": "/parFormTextArea"
+            }
+        ]
+    },
+    "additionalProperties": false,
+    "id": "/parFormBuilderFields"
+}

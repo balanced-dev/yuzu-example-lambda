@@ -1,0 +1,30 @@
+{
+    "testForm": {
+        "isSubmitted": false,
+        "submittedMessage": "Your submitted message here",
+        "validation": {
+            "title": "Form Builder Validation",
+            "textHtml": ""
+        },
+        "fields": [
+            {
+                "placeholder": "Full name",
+                "_ref": "/parFormTextInput"
+            },
+            {
+                "placeholder": "Website",
+                "_ref": "/parFormTextInput"
+            },
+            {
+                "type": "email",
+                "placeholder": "Email address",
+                "_ref": "/parFormTextInput"
+            },
+            {
+                "$ref": "/parFormTextArea"
+            }
+        ],
+        "submitButtonLabel": "Create your account",
+        "_ref": "/parFormBuilder"
+    }
+}
