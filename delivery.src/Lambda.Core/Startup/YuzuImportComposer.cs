@@ -68,12 +68,11 @@ namespace Lambda.Core
             config.IgnoreViewmodels.Add("vmBlock_FormTextInput");
             config.IgnoreViewmodels.Add("vmBlock_FormSelect");
 
-            config.IgnoreViewmodels.Add("vmBlock_SectionGridConfig");
+            config.IgnoreViewmodels.Add("vmBlock_DataGridRows");
+
             config.IgnoreViewmodels.Add("vmBlock_FormBuilderFields");
 
             config.IgnoreProperties.Add("Form");
-            config.IgnoreProperties.Add("Endpoints");
-            config.IgnoreProperties.Add("NextPageEndpoint");
 
             YuzuDeliveryImport.Initialize(config);
         }

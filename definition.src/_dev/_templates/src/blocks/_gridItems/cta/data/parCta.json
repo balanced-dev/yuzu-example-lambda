@@ -5,6 +5,6 @@
         "src": "/_client/img/parallex.jpg"
     },
     "form": {
-        "$ref": "/parForm"
+        "$ref": "/parDataForm"
     }
 }
