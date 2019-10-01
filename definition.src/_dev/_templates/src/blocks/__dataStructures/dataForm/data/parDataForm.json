@@ -19,6 +19,9 @@
                 "type": "email",
                 "placeholder": "Email address",
                 "_ref": "/parFormTextInput"
+            },
+            {
+                "$ref": "/parFormTextArea"
             }
         ],
         "submitButtonLabel": "Create your account",

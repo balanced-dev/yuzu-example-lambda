@@ -11,13 +11,19 @@
             "type": "string"
         },
         "link": {
-            "$ref": "/parDataLink"
+            "$ref": "./parDataLink.schema"
         },
         "backgroundImage": {
-            "$ref": "/parDataImage"
+            "$ref": "./parDataImage.schema"
         },
         "_ref": {
             "type": "string"
+        },
+        "_modifiers": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
         }
     },
     "additionalProperties": false

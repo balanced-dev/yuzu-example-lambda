@@ -4,7 +4,7 @@
             {
                 "items": [
                     {
-                        "$ref": "/parPageHero"
+                        "$ref": "/parPageHero_workshop"
                     }
                 ]
             },
@@ -35,6 +35,20 @@
                         "$ref": "/parPricing"
                     }
                 ]
+            },
+            {
+                "items": [
+                    {
+                        "$ref": "/parFaq"
+                    }
+                ]
+            },
+            {
+                "items": [
+                    {
+                        "$ref": "/parCta"
+                    }
+                ]
             }
         ]
     },
@@ -43,5 +57,5 @@
     },
     "footer": {
         "$ref": "/parSiteFooter"
-    } 
+    }
 }

@@ -4,13 +4,16 @@
             {
                 "items": [
                     {
-                        "title": "Promote your startup with Lambda",
-                        "text": "Nam liber tempor cum eleifend option congue nihil imper. Nam liber tempor cum soluta nobis.",
+                        "title": "Yuzu helps me qickly see new possibilities",
+                        "text": "So that I can understand how state affects the UI",
                         "link": {
-                            "label": "Get started now"
+                            "label": "Find out more",
+                            "href": "",
+                            "title": ""
                         },
                         "backgroundImage": {
-                            "src": "/_client/img/parallex.jpg"
+                            "src": "/_client/img/bg3.jpg",
+                            "alt": ""
                         },
                         "_ref": "/parPageHero",
                         "yuzu-path": "/grid/rows[0]/items[0]"
@@ -50,8 +53,8 @@
                                 "icon": "heart"
                             },
                             {
-                                "title": "Money-back gaurantee",
-                                "text": "Nam liber tempor cum eleifend option congue nihil imper. Nam liber tempor cum soluta nobis.",
+                                "title": "Money back guarantee",
+                                "text": "Nam liber tempor cum eleifend option congue nihil imper. Nam liber tempor cum soluta nobis",
                                 "icon": "rotate-ccw"
                             }
                         ],
@@ -263,6 +266,101 @@
                         ],
                         "_ref": "/parPricing",
                         "yuzu-path": "/grid/rows[4]/items[0]"
+                    }
+                ]
+            },
+            {
+                "items": [
+                    {
+                        "title": "ANSWERS TO COMMON QUESTIONS",
+                        "subtitle": "Frequently asked questions",
+                        "items": [
+                            {
+                                "title": "Lorem ipsum dolor sit amet?",
+                                "text": "Magnis modipsae que voloratati andigen daepeditem quiate conecus aut labore. Laceaque quiae sitiorem rest non restibusaes maio es dem tumquam explabo."
+                            },
+                            {
+                                "title": "Lorem sit andigen daepeditem amet?",
+                                "text": "Magnis modipsae que voloratati andigen daepeditem quiate conecus aut labore. Laceaque quiae sitiorem rest non restibusaes maio es dem tumquam explabo."
+                            },
+                            {
+                                "title": "Lorem ipsum dolor sit andigen daepeditem amet?",
+                                "text": "Magnis modipsae que voloratati andigen daepeditem quiate conecus aut labore. Laceaque quiae sitiorem rest non restibusaes maio es dem tumquam explabo."
+                            },
+                            {
+                                "title": "Lorem sit andigen daepeditem amet dem tumquam explabo?",
+                                "text": "Magnis modipsae que voloratati andigen daepeditem quiate conecus aut labore. Laceaque quiae sitiorem rest non restibusaes maio es dem tumquam explabo."
+                            },
+                            {
+                                "title": "Lorem sit andigen daepeditem amet?",
+                                "text": "Magnis modipsae que voloratati andigen daepeditem quiate conecus aut labore. Laceaque quiae sitiorem rest non restibusaes maio es dem tumquam explabo."
+                            },
+                            {
+                                "title": "Lorem sit daepeditem amet?",
+                                "text": "Magnis modipsae que voloratati andigen daepeditem quiate conecus aut labore. Laceaque quiae sitiorem rest non restibusaes maio es dem tumquam explabo."
+                            }
+                        ],
+                        "moreTitle": "Still have more questions?",
+                        "moreText": "Magnis modipsae que voloratati andigen daepeditem quiate conecus aut labore.",
+                        "moreLink": {
+                            "label": "Get in touch"
+                        },
+                        "_ref": "/parFaq",
+                        "yuzu-path": "/grid/rows[5]/items[0]"
+                    }
+                ]
+            },
+            {
+                "items": [
+                    {
+                        "title": "Grow your business with Lambda",
+                        "text": "Magnis modipsae que voloratati andigen daepeditem quiate conecus aut labore. Laceaque quiae sitiorem rest non restibusaes maio es dem tumquam explabo.",
+                        "backgroundImage": {
+                            "src": "/_client/img/parallex.jpg"
+                        },
+                        "form": {
+                            "testForm": {
+                                "isSubmitted": false,
+                                "submittedMessage": "Your submitted message here",
+                                "validation": {
+                                    "title": "Form Builder Validation",
+                                    "textHtml": ""
+                                },
+                                "fields": [
+                                    {
+                                        "placeholder": "Full name",
+                                        "_ref": "/parFormTextInput"
+                                    },
+                                    {
+                                        "placeholder": "Website",
+                                        "_ref": "/parFormTextInput"
+                                    },
+                                    {
+                                        "type": "email",
+                                        "placeholder": "Email address",
+                                        "_ref": "/parFormTextInput"
+                                    },
+                                    {
+                                        "name": "message",
+                                        "label": "Message",
+                                        "value": "",
+                                        "id": "",
+                                        "placeholder": "Write your message here",
+                                        "isRequired": true,
+                                        "isDisabled": false,
+                                        "isReadonly": false,
+                                        "_ref": "/parFormTextArea",
+                                        "yuzu-path": "/grid/rows[6]/items[0]/form/testForm/fields[3]"
+                                    }
+                                ],
+                                "submitButtonLabel": "Create your account",
+                                "_ref": "/parFormBuilder"
+                            },
+                            "_ref": "/parDataForm",
+                            "yuzu-path": "/grid/rows[6]/items[0]/form"
+                        },
+                        "_ref": "/parCta",
+                        "yuzu-path": "/grid/rows[6]/items[0]"
                     }
                 ]
             }

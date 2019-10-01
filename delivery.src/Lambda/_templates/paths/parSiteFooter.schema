@@ -1,9 +1,9 @@
 {
     "refs": {
-        "/navAreas/navLinks/link": [
+        "/navAreas/navLinks": [
             "/parDataLink"
         ],
-        "/socialLinks/link": [
+        "/socialLinks": [
             "/parDataLink"
         ]
     }

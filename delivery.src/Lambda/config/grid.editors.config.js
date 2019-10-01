@@ -65,5 +65,28 @@
       "previewCssFilePath": "",
       "previewJsFilePath": ""
     }
+  },
+  {
+    "name": "Grid",
+    "alias": "grid",
+    "view": "/App_Plugins/DocTypeGridEditor/Views/doctypegrideditor.html",
+    "render": "/App_Plugins/DocTypeGridEditor/Render/DocTypeGridEditor.cshtml",
+    "icon": "icon-item-arrangement",
+    "config": {
+      "allowedDocTypes": [
+        "cta",
+        "feature",
+        "pageHero",
+        "pricing",
+        "services",
+        "testimonials",
+        "faq"
+      ],
+      "enablePreview": true,
+      "viewPath": "/Views/Partials/Grid/Editors/DocTypeGridEditor/",
+      "previewViewPath": "/Views/Partials/Grid/Editors/DocTypeGridEditor/Previews/",
+      "previewCssFilePath": "",
+      "previewJsFilePath": ""
+    }
   }
 ]
