@@ -25,6 +25,8 @@ namespace Lambda.Core
 
             //cfg.AddGridWithRows<Home, vmPage_Home>(src => src.Grid, dest => dest.Grid);
 
+            //cfg.AddForm<Cta, vmBlock_Cta>(src => src.Form, dest => dest.Form);
+
             var mapperConfig = new MapperConfiguration(cfg);
 
             composition.Register<IMapper>(new Mapper(mapperConfig));

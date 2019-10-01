@@ -25,7 +25,7 @@
     "gulp-util": "^3.0.8",
     "path": "^0.12.7",
     "prettyjson": "^1.2.1",
-    "yuzu-definition-api": "^1.0.5",
+    "yuzu-definition-api": "^1.0.6",
     "yuzu-definition-core": "^1.2.31",
     "yuzu-definition-hbs-helpers": "^1.1.9",
     "yuzu-definition-ui": "^1.0.13"

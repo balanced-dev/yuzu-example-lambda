@@ -12,6 +12,7 @@ using YuzuDelivery.Umbraco.Forms;
 using YuzuDelivery.Umbraco.Grid;
 using YuzuDelivery.Umbraco.Import;
 using Lambda.Core.ViewModels;
+using Lambda.Core.UmbracoModels;
 
 namespace Lambda.Core
 {
@@ -59,18 +60,14 @@ namespace Lambda.Core
             config.IgnoreViewmodels.Add<vmBlock_FormTextArea>();
             config.IgnoreViewmodels.Add<vmBlock_FormTextInput>();
 
-            /*config.IgnoreViewmodels.Add("vmBlock_FormBuilder");
-            config.IgnoreViewmodels.Add("vmBlock_FormFooter");
-            config.IgnoreViewmodels.Add("vmBlock_FormButton");
-            config.IgnoreViewmodels.Add("vmBlock_FormTextArea");
-            config.IgnoreViewmodels.Add("vmBlock_FormTextInput");
-            config.IgnoreViewmodels.Add("vmBlock_FormSelect");
-
-            config.IgnoreViewmodels.Add("vmBlock_DataGridRows");
-
-            config.IgnoreViewmodels.Add("vmBlock_FormBuilderFields");*/
+            config.IgnoreViewmodels.Add("vmBlock_FormSelectOption");
+            config.IgnoreViewmodels.Add("vmSub_FormSelectFormSelectOption");
+            config.IgnoreViewmodels.Add("vmSub_FormSelectOption");
 
             config.IgnoreProperties.Add("Form");
+
+            //config.IgnoreUmbracoModelsForAutomap.Add<Home>();
+            //config.IgnoreUmbracoModelsForAutomap.Add<Cta>();
 
             YuzuDeliveryImport.Initialize(config);
         }

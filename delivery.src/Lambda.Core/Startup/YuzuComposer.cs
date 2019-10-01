@@ -48,7 +48,7 @@ namespace Lambda.Core
                     {
                         Name = "Partials",
                         Path = Server.MapPath(partialsLocation),
-                        Schema = Server.MapPath(pagesLocation.Replace("src", "schema")),
+                        Schema = Server.MapPath(partialsLocation.Replace("src", "schema")),
                         RegisterAllAsPartials = true,
                         SearchSubDirectories = true
                     }

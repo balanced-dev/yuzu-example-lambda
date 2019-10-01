@@ -68,7 +68,7 @@ const distCopyPagesHtml = () => {
 const distSchemaPages = () => {
 
 	return gulp.src(files.templatePages + '/pages/**/*.schema')
-		.pipe($.blockTemplatesParse.gulpSchema(files.templatePartials, false))
+		.pipe($.yuzuDefinitionCore.gulpSchema(files.templatePartials, false))
 		.pipe($.flatten())
 		.pipe(gulp.dest(paths.handlebars.schema.dist +'/pages'));
 };
@@ -76,7 +76,7 @@ const distSchemaPages = () => {
 const distSchemaBlocks = () => {
 
 	return gulp.src(files.templatePages + '/blocks/**/*.schema')
-		.pipe($.blockTemplatesParse.gulpSchema(files.templatePartials, true))
+		.pipe($.yuzuDefinitionCore.gulpSchema(files.templatePartials, true))
 		.pipe($.flatten())
 		.pipe(gulp.dest(paths.handlebars.schema.dist +'/blocks'));
 };
@@ -84,7 +84,7 @@ const distSchemaBlocks = () => {
 const distData = () => {
 
 	return gulp.src(files.templatePages + '/pages/**/*.json')
-		.pipe($.blockTemplatesParse.gulpData(files.templatePartials))
+		.pipe($.yuzuDefinitionCore.gulpData(files.templatePartials))
 		.pipe($.flatten())
 		.pipe(gulp.dest(paths.handlebars.data.dist));
 };
@@ -92,7 +92,7 @@ const distData = () => {
 const distPaths = () => {
 
 	return gulp.src(files.templatePages + '/**/*.schema')
-		.pipe($.blockTemplatesParse.gulpPaths(files.templatePartials))
+		.pipe($.yuzuDefinitionCore.gulpPaths(files.templatePartials))
 		.pipe($.flatten())
 		.pipe(gulp.dest(paths.handlebars.paths.dist));
 };
