@@ -1,6 +1,6 @@
 ﻿var app = angular.module("umbraco");
 
-function contentDialog($scope, notificationsService, yuzuContentImportResources) {
+function contentDialog($scope, notificationsService, yuzuContentImportResources, formHelper) {
 
     var vm = this;
 
@@ -10,7 +10,7 @@ function contentDialog($scope, notificationsService, yuzuContentImportResources)
 
     vm.toImport = {};
     vm.toImport.viewmodel = vm.dialogData.viewmodel;
-    vm.toImport.documentType = vm.dialogData.documentType;
+    vm.toImport.documentTypeName = vm.dialogData.documentTypeName;
 
     vm.contentEditorSettings = {};
     vm.contentEditorSettings.view = 'views/propertyeditors/contentpicker/contentpicker.html';
@@ -23,26 +23,21 @@ function contentDialog($scope, notificationsService, yuzuContentImportResources)
         vm.contentFiles = response.data;
     });
 
-    vm.import = function () {
-        vm.invalidForm = false;
-        if (vm.toImport.filename)
-            vm.toImport.file = _.findWhere(vm.contentFiles, { filename: vm.toImport.filename });
+    vm.submit = function (createLicenseForm) {
 
-        if (vm.toImport.content) {
-            yuzuContentImportResources.import(vm.toImport)
-                .then(
-                function () {
-                    notificationsService.success("Content imported sucessfully");
-                    vm.close();
-                },
-                function () {
-                    notificationsService.error("Error ocurred when adding content");
-                });
+        if (formHelper.submitForm({ formCtrl: createLicenseForm, scope: $scope })) {
+
+            vm.buttonState = "busy";
+
+            vm.invalidForm = false;
+            if (vm.toImport.filename)
+                vm.toImport.file = _.findWhere(vm.contentFiles, { filename: vm.toImport.filename });
+
+            $scope.model.submit(vm.toImport);
         }
-        else {
-            vm.invalidForm = true;
-        }
+
     };
+
 };
 
 function YuzuContentImportResources($http) {

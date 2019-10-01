@@ -1,0 +1,57 @@
+﻿<div class="yuzu-import-dialog umbracoDialog" ng-controller="Yuzu.Delivery.UmbracoImportViewModel.LoggingDialog as vm">
+
+    <umb-editor-view>
+
+        <umb-editor-header name="'Yuzu Delivery Import Logging Links'"
+                            name-locked="true"
+                            hide-alias="true"
+                            hide-icon="true"
+                            hide-description="true">
+        </umb-editor-header>
+
+        <umb-editor-container>
+            <umb-load-indicator ng-if="vm.loading">
+            </umb-load-indicator>
+
+            <div class="umb-pane" ng-if="!vm.loading">
+
+                <h4>Types</h4>
+                <umb-box>
+                    <umb-box-content>
+                        <ul>
+                            <li style="list-style: none; padding: 3px 0;" ng-repeat="type in vm.data.types">
+                                <a target="_blank" href="{{type.url}}">{{type.name}}</a>
+                            </li>
+                        </ul>
+                    </umb-box-content>
+                </umb-box>
+
+                <h4>Message Templates</h4>
+                <umb-box>
+                    <umb-box-content>
+                        <div ng-repeat="templateType in vm.templateTypes">
+                            <strong>{{templateType}}</strong>
+                            <ul>
+                                <li style="list-style: none; padding: 3px 0;" ng-repeat="template in vm.data.templates[templateType]">
+                                    <a target="_blank" href="{{template.url}}">{{template.name}}</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </umb-box-content>
+                </umb-box>
+
+            </div>
+        </umb-editor-container>
+
+        <umb-editor-footer>
+            <umb-editor-footer-content-right>
+                <umb-button type="button"
+                            button-style="link"
+                            label-key="general_close"
+                            shortcut="esc"
+                            action="vm.close()">
+                </umb-button>
+        </umb-editor-footer>
+    </umb-editor-view>
+
+</div>

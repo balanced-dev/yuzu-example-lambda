@@ -154,6 +154,9 @@
     <Reference Include="NPoco, Version=3.9.4.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\NPoco.3.9.4\lib\net45\NPoco.dll</HintPath>
     </Reference>
+    <Reference Include="Our.Umbraco.DocTypeGridEditor, Version=1.0.7171.34466, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Our.Umbraco.DocTypeGridEditor.1.0.0\lib\net45\Our.Umbraco.DocTypeGridEditor.dll</HintPath>
+    </Reference>
     <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
       <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
     </Reference>
@@ -195,7 +198,7 @@
       <HintPath>..\packages\Skybrud.Essentials.1.1.12\lib\net47\Skybrud.Essentials.dll</HintPath>
     </Reference>
     <Reference Include="Skybrud.Umbraco.GridData, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Skybrud.Umbraco.GridData.3.0.0-beta002\lib\net472\Skybrud.Umbraco.GridData.dll</HintPath>
+      <HintPath>..\packages\Skybrud.Umbraco.GridData.3.0.0-beta003\lib\net472\Skybrud.Umbraco.GridData.dll</HintPath>
     </Reference>
     <Reference Include="Superpower, Version=1.0.0.0, Culture=neutral, PublicKeyToken=aec39280ded1b3a7, processorArchitecture=MSIL">
       <HintPath>..\packages\Superpower.2.0.0\lib\net45\Superpower.dll</HintPath>
@@ -425,27 +428,33 @@
     <Reference Include="Umbraco.Web.UI, Version=8.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\UmbracoCms.Web.8.1.1\lib\net472\Umbraco.Web.UI.dll</HintPath>
     </Reference>
-    <Reference Include="YuzuDelivery.Core">
-      <HintPath>..\lib\YuzuDelivery.Core.dll</HintPath>
+    <Reference Include="YuzuDelivery.Core, Version=1.0.22.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\YuzuDelivery.Core.1.0.22\lib\net472\YuzuDelivery.Core.dll</HintPath>
     </Reference>
-    <Reference Include="YuzuDelivery.Umbraco.Blocks, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\lib\YuzuDelivery.Umbraco.Blocks.dll</HintPath>
+    <Reference Include="YuzuDelivery.Umbraco.Blocks, Version=1.0.47.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\YuzuDelivery.Umbraco.Blocks.1.0.47\lib\net472\YuzuDelivery.Umbraco.Blocks.dll</HintPath>
     </Reference>
-    <Reference Include="YuzuDelivery.Umbraco.Forms, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\lib\YuzuDelivery.Umbraco.Forms.dll</HintPath>
+    <Reference Include="YuzuDelivery.Umbraco.Forms, Version=1.0.10.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\YuzuDelivery.Umbraco.Forms.1.0.10\lib\net472\YuzuDelivery.Umbraco.Forms.dll</HintPath>
     </Reference>
-    <Reference Include="YuzuDelivery.Umbraco.Grid, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\lib\YuzuDelivery.Umbraco.Grid.dll</HintPath>
+    <Reference Include="YuzuDelivery.Umbraco.Grid, Version=1.0.21.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\YuzuDelivery.Umbraco.Grid.1.0.21\lib\net472\YuzuDelivery.Umbraco.Grid.dll</HintPath>
     </Reference>
     <Reference Include="YuzuDelivery.Umbraco.Import, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\lib\YuzuDelivery.Umbraco.Import.dll</HintPath>
+      <HintPath>..\packages\YuzuDelivery.Umbraco.Import.1.0.58-beta\lib\net472\YuzuDelivery.Umbraco.Import.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Plugins\DocTypeGridEditor\Css\doctypegrideditor.css" />
+    <Content Include="App_Plugins\DocTypeGridEditor\Js\doctypegrideditor.controllers.js" />
+    <Content Include="App_Plugins\DocTypeGridEditor\Js\doctypegrideditor.directives.js" />
+    <Content Include="App_Plugins\DocTypeGridEditor\Js\doctypegrideditor.resources.js" />
+    <Content Include="App_Plugins\DocTypeGridEditor\Js\doctypegrideditor.services.js" />
+    <Content Include="App_Plugins\DocTypeGridEditor\Lang\da-DK.xml" />
+    <Content Include="App_Plugins\DocTypeGridEditor\Lang\en-GB.xml" />
+    <Content Include="App_Plugins\DocTypeGridEditor\Lang\en-US.xml" />
+    <Content Include="App_Plugins\DocTypeGridEditor\Views\doctypegrideditor.dialog.html" />
+    <Content Include="App_Plugins\DocTypeGridEditor\Views\doctypegrideditor.html" />
     <Content Include="App_Plugins\ModelsBuilder\modelsbuilder.controller.js" />
     <Content Include="App_Plugins\ModelsBuilder\modelsbuilder.html" />
     <Content Include="App_Plugins\ModelsBuilder\modelsbuilder.resource.js" />
@@ -574,9 +583,14 @@
     <Content Include="App_Plugins\UmbracoForms\Xslt\Templates\Schema2\UmbracoContourListComments.xslt" />
     <Content Include="App_Plugins\UmbracoForms\Xslt\Templates\UmbracoContourListComments.xslt" />
     <Content Include="App_Plugins\UmbracoForms\Xslt\xml.xslt" />
+    <Content Include="App_Plugins\YuzuDelivery.Umbraco.Import\assets\yuzu.svg" />
     <Content Include="App_Plugins\YuzuDelivery.Umbraco.Import\contentDialog\contentDialog.controller.js" />
     <Content Include="App_Plugins\YuzuDelivery.Umbraco.Import\contentDialog\contentDialog.html" />
     <Content Include="App_Plugins\YuzuDelivery.Umbraco.Import\Lang\en-US.xml" />
+    <Content Include="App_Plugins\YuzuDelivery.Umbraco.Import\licenseDialog\licenseDialog.controller.js" />
+    <Content Include="App_Plugins\YuzuDelivery.Umbraco.Import\licenseDialog\licenseDialog.html" />
+    <Content Include="App_Plugins\YuzuDelivery.Umbraco.Import\loggingDialog\loggingDialog.controller.js" />
+    <Content Include="App_Plugins\YuzuDelivery.Umbraco.Import\loggingDialog\loggingDialog.html" />
     <Content Include="App_Plugins\YuzuDelivery.Umbraco.Import\settingsDialog\settingsDialog.controller.js" />
     <Content Include="App_Plugins\YuzuDelivery.Umbraco.Import\settingsDialog\settingsDialog.html" />
     <Content Include="App_Plugins\YuzuDelivery.Umbraco.Import\UmbracoImportViewModel.css" />
@@ -633,6 +647,9 @@
     <Content Include="App_Plugins\UmbracoForms\Data\Templates\contactform.json" />
     <Content Include="App_Plugins\UmbracoForms\Data\Templates\commentform.json" />
     <Content Include="App_Plugins\YuzuDelivery.Umbraco.Import\package.manifest" />
+    <Content Include="App_Plugins\DocTypeGridEditor\package.manifest" />
+    <Content Include="App_Plugins\DocTypeGridEditor\Render\DocTypeGridEditor.cshtml" />
+    <Content Include="App_Plugins\DocTypeGridEditor\Render\DocTypeGridEditorPreviewer.cshtml" />
     <None Include="packages.config" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\Partials\Grid\Editors\Textstring.cshtml" />

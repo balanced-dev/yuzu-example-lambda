@@ -1,18 +1,18 @@
 ﻿var app = angular.module("umbraco");
 
-function settingsDialog($scope) {
+function settingsDialog($scope, formHelper, yuzuImportResources) {
 
     var vm = this;
 
     vm.dialogData = $scope.model.dialogData;
+    vm.item = vm.dialogData.item;
     if (vm.dialogData.storeContentAs)
         vm.storeContentAs = vm.dialogData.storeContentAs;
     else {
         vm.storeContentAs = {};
-        vm.storeContentAs["$type"] = "";
+        vm.storeContentAs["$type"] = "YuzuDelivery.Umbraco.Import.InlineStoreContentAs, YuzuDelivery.Umbraco.Import";
         vm.storeContentAs.type = 0;
     }
-    vm.submit = $scope.model.submit;
     vm.close = $scope.model.close;
 
     vm.contentEditorSettings = {};
@@ -21,14 +21,31 @@ function settingsDialog($scope) {
     vm.contentEditorSettings.config.minNumber = 1;
     vm.contentEditorSettings.config.maxNumber = 1;
 
+    yuzuImportResources.getContentTypes().then(function (response) {
+        vm.contentTypes = response.data;
+    });
+
     vm.change = function () {
         var newType = {};
-        if (vm.storeContentAs.type === 1)
-            newType["$type"] = "YuzuDelivery.Import.GlobalStoreContentAs, yuzu-del-umb-import";
+        if (vm.storeContentAs.type === 0)
+            newType["$type"] = "YuzuDelivery.Umbraco.Import.InlineStoreContentAs, YuzuDelivery.Umbraco.Import";
+        else if (vm.storeContentAs.type === 1)
+            newType["$type"] = "YuzuDelivery.Umbraco.Import.GlobalStoreContentAs, YuzuDelivery.Umbraco.Import";
         else if (vm.storeContentAs.type === 2)
-            newType["$type"] = "YuzuDelivery.Import.GroupStoreContentAs, yuzu-del-umb-import";
+            newType["$type"] = "YuzuDelivery.Umbraco.Import.GroupStoreContentAs, YuzuDelivery.Umbraco.Import";
         newType.type = vm.storeContentAs.type;
         vm.storeContentAs = newType;
+    };
+
+    vm.submit = function (storeContactAsForm) {
+
+        if (formHelper.submitForm({ formCtrl: storeContactAsForm, scope: $scope })) {
+
+            vm.buttonState = "busy";
+
+            $scope.model.submit(vm.item, vm.storeContentAs);
+        }
+
     };
 
     vm.toggle = function () {

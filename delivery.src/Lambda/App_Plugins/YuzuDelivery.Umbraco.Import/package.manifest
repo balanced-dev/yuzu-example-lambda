@@ -5,7 +5,9 @@
   javascript: [
     "~/App_Plugins/YuzuDelivery.Umbraco.Import/UmbracoImportViewModelList.controller.js",
     "~/App_Plugins/YuzuDelivery.Umbraco.Import/contentDialog/contentDialog.controller.js",
-    "~/App_Plugins/YuzuDelivery.Umbraco.Import/settingsDialog/settingsDialog.controller.js"
+    "~/App_Plugins/YuzuDelivery.Umbraco.Import/settingsDialog/settingsDialog.controller.js",
+    "~/App_Plugins/YuzuDelivery.Umbraco.Import/licenseDialog/licenseDialog.controller.js",
+    "~/App_Plugins/YuzuDelivery.Umbraco.Import/loggingDialog/loggingDialog.controller.js"
   ],
 	"dashboards": [
     {

@@ -1,93 +1,113 @@
-﻿<div ng-controller="Yuzu.Delivery.UmbracoImportViewModel.SettingsDialog as vm">
+﻿<div class="yuzu-import-dialog umbracoDialog" ng-controller="Yuzu.Delivery.UmbracoImportViewModel.SettingsDialog as vm">
 
-    <umb-editor-view>
+    <form name="storeContactAsForm" no-validate val-form-manager>
 
-        <div class="umb-editor-header">
-            <h4>Settings</h4>
-            <div>
-                {{vm.dialogData.viewmodel}}
-            </div>
-        </div>
+        <umb-editor-view>
 
-        <umb-editor-container>
+            <umb-editor-header name="'Settings for '+ vm.dialogData.item.viewmodel"
+                               name-locked="true"
+                               hide-alias="true"
+                               hide-icon="true"
+                               hide-description="true">
+            </umb-editor-header>
 
+            <umb-editor-container>
+                <umb-load-indicator ng-if="vm.loading">
+                </umb-load-indicator>
 
-            <div class="umb-control-group">
-                <div class="umb-el-wrap">
-                    <label class="control-label" for="file">
-                        Store Content As
-                    </label>
+                <div class="umb-pane" ng-if="!vm.loading">
 
-                    <select ng-model="vm.storeContentAs.type" ng-change="vm.change()" class="input-block-level">
-                        <option ng-value="0">Inline</option>
-                        <option ng-value="1">Global</option>
-                        <option ng-value="2">New Group</option>
-                    </select>
-                    <p ng-if="vm.storeContentAs.type == 0">Nested content to store child content as a property in the parent</p>
-                    <p ng-if="vm.storeContentAs.type == 1">Content area and items in the tree and content picker in the parent</p>
-                    <p ng-if="vm.storeContentAs.type == 2">New group in the parent, prefixes properties with the group name</p>
+                    <umb-box>
+                        <umb-box-content>
+
+                            <umb-control-group label="Store Content As">
+
+                                <select ng-model="vm.storeContentAs.type" ng-change="vm.change()" class="input-block-level">
+                                    <option ng-value="0">Inline</option>
+                                    <option ng-value="1">Global</option>
+                                    <option ng-value="2">New Group</option>
+                                </select>
+                                <p ng-if="vm.storeContentAs.type == 0">Parent property as nested content<br />This content is added inline</p>
+                                <p ng-if="vm.storeContentAs.type == 1">Parent property as content picker<br />This content is added to the content tree</p>
+                                <p ng-if="vm.storeContentAs.type == 2">Parent adds a new group<br />This content is added to the new group</p>
+
+                            </umb-control-group>
+
+                        </umb-box-content>
+                    </umb-box>
+
+                    <umb-box ng-if="vm.storeContentAs.type == 0">
+                        <umb-box-content>
+                            <umb-control-group label="Document Type Name">
+                                <input type="text" class="umb-textstring textstring input-block-level" ng-model="vm.item.documentTypeName">
+                            </umb-control-group>
+                        </umb-box-content>
+                    </umb-box>
+
+                    <umb-box ng-if="vm.storeContentAs.type == 1 || vm.storeContentAs.type == 2">
+                        <umb-box-content>
+                            <h4>Schema</h4>
+                            <umb-control-group label="Merge with Document Type">
+                                <select ng-model="vm.item.documentTypeAlias">
+                                    <option ng-value="''" ng-if="vm.storeContentAs.type == 1">None</option>
+                                    <option ng-repeat="option in vm.contentTypes" ng-selected="vm.item.documentTypeAlias == option.alias" ng-value="option.alias">{{option.name}}</option>
+                                </select>
+                            </umb-control-group>
+
+                            <umb-control-group label="Group Name" ng-if="(vm.storeContentAs.type == 2) || (vm.storeContentAs.type == 1 && vm.item.documentTypeAlias)">
+                                <input type="text" placeholder="Summary" class="umb-textstring textstring input-block-level" ng-model="vm.storeContentAs.groupName" />
+                                <div><small>Leave blank to use default group</small></div>
+                            </umb-control-group>
+                        </umb-box-content>
+                    </umb-box>
+
+                    <umb-box ng-if="vm.storeContentAs.type == 1">
+                        <umb-box-content>
+                            <h4>Content</h4>
+                            <umb-control-group label="Parent Node" required="true">
+                                <yuzu-content-import-picker settings="vm.contentEditorSettings" value="vm.storeContentAs.parentContentId"></yuzu-content-import-picker>
+
+                                <span ng-messages="storeContactAsForm.parentContentId.$error" show-validation-on-submit>
+                                    <span class="help-inline" ng-message="required"><localize key="general_required">Required</localize></span>
+                                </span>
+                            </umb-control-group>
+
+                            <umb-control-group label="Add Area Node">
+                                <umb-toggle checked="vm.storeContentAs.addAreaNode" on-click="vm.toggle()"></umb-toggle>
+                            </umb-control-group>
+
+                            <umb-control-group label="Primary Key Property Name" required="true">
+                                <input type="text" placeholder="Title" class="umb-textstring textstring input-block-level" name="primaryPropertyName" ng-model="vm.storeContentAs.primaryPropertyName" required />
+
+                                <span ng-messages="storeContactAsForm.primaryPropertyName.$error" show-validation-on-submit>
+                                    <span class="help-inline" ng-message="required"><localize key="general_required">Required</localize></span>
+                                </span>
+                            </umb-control-group>
+                        </umb-box-content>
+                    </umb-box>
+
                 </div>
-            </div>
 
-            <hr />
+            </umb-editor-container>
 
-            <div class="umb-control-group" ng-if="vm.storeContentAs.type == 1">
-                <div class="umb-el-wrap">
-                    <label class="control-label">
-                        Parent Node
-                    </label>
+            <umb-editor-footer>
+                <umb-editor-footer-content-right>
+                    <umb-button type="button"
+                                button-style="link"
+                                label-key="general_close"
+                                shortcut="esc"
+                                action="vm.close()">
+                    </umb-button>
+                    <umb-button type="button"
+                                button-style="success"
+                                label-key="general_submit"
+                                action="vm.submit()">
+                    </umb-button>
+                </umb-editor-footer-content-right>
+            </umb-editor-footer>
 
-                    <yuzu-content-import-picker settings="vm.contentEditorSettings" value="vm.storeContentAs.parentContentId"></yuzu-content-import-picker>
-                </div>
+        </umb-editor-view>
 
-                <div class="umb-el-wrap">
-                    <label class="control-label">
-                        Add Area Node
-                    </label>
-
-                    <umb-toggle checked="vm.storeContentAs.addAreaNode" on-click="vm.toggle()"></umb-toggle>
-                </div>
-
-                <div class="umb-el-wrap">
-                    <label class="control-label" for="file">
-                        Primary Property Name
-                    </label>
-
-                    <input type="text" ng-model="vm.storeContentAs.primaryPropertyName" />
-                </div>
-
-                primaryPropertyName
-            </div>
-
-            <div class="umb-control-group" ng-if="vm.storeContentAs.type == 2">
-                <div class="umb-el-wrap">
-                    <label class="control-label" for="file">
-                        Group Name
-                    </label>
-
-                    <input type="text" ng-model="vm.storeContentAs.groupName" />
-                </div>
-            </div>
-
-
-        </umb-editor-container>
-
-        <umb-editor-footer>
-            <umb-editor-footer-content-right>
-                <umb-button type="button"
-                            button-style="link"
-                            label-key="general_close"
-                            shortcut="esc"
-                            action="vm.close()">
-                </umb-button>
-                <umb-button type="button"
-                            button-style="success"
-                            label-key="general_submit"
-                            action="vm.submit(vm.storeContentAs)">
-                </umb-button>
-            </umb-editor-footer-content-right>
-        </umb-editor-footer>
-
-    </umb-editor-view>
+    </form>
 
 </div>

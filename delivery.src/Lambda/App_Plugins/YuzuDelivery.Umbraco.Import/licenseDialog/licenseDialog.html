@@ -1,0 +1,80 @@
+﻿<div class="yuzu-import-dialog umbracoDialog" ng-controller="Yuzu.Delivery.UmbracoImportViewModel.LicenseDialog as vm">
+
+    <form name="createLicenseForm" no-validate val-form-manager>
+
+        <umb-editor-view>
+
+            <umb-editor-header name="'Yuzu Licensing'"
+                name-locked="true"
+                hide-alias="true"
+                hide-icon="true"
+                hide-description="true">
+            </umb-editor-header>
+
+            <umb-editor-container>
+                <umb-load-indicator ng-if="vm.loading">
+                </umb-load-indicator>
+
+                <div class="umb-pane" ng-if="!vm.loading">
+
+                    <umb-box ng-if="vm.licenseMessage">
+                        <umb-box-content>
+                            <p>{{vm.licenseMessage}}</p>
+                        </umb-box-content>
+                    </umb-box>
+
+                    <umb-box ng-if="vm.licenseStatus == 0">
+                        <umb-box-content>
+                            <umb-control-group label="Email Address" required="true">
+                                <input type="text" class="umb-textstring textstring input-block-level" name="emailAddress" ng-model="vm.data.emailAddress" val-email required />
+
+                                <span ng-messages="createLicenseForm.emailAddress.$error" show-validation-on-submit>
+                                    <span class="help-inline" ng-message="required"><localize key="general_required">Required</localize></span>
+                                    <span class="help-inline" ng-message="valEmail"><localize key="general_email">Required</localize></span>
+                                </span>
+                            </umb-control-group>
+                            <p>Activate your trial licence uisng your email address</p>
+                        </umb-box-content>
+                    </umb-box>
+
+                    <umb-box ng-if="vm.licenseStatus == 1 || vm.licenseStatus == 3">
+                        <umb-box-content>
+                            <umb-control-group label="Activation Key" required="true">
+                                <input type="text" class="umb-textstring textstring input-block-level" name="activationKey" ng-model="vm.data.activationKey" required />
+
+                                <span ng-messages="createLicenseForm.activationKey.$error" show-validation-on-submit>
+                                    <span class="help-inline" ng-message="required"><localize key="general_required">Required</localize></span>
+                                </span>
+                            </umb-control-group>
+                            <p>Use an activation key to activate your license</p>
+                        </umb-box-content>
+                    </umb-box>
+
+                </div>
+
+            </umb-editor-container>
+
+            <umb-editor-footer>
+                <umb-editor-footer-content-right>
+                    <umb-button type="button"
+                                button-style="link"
+                                label-key="general_close"
+                                shortcut="esc"
+                                action="vm.close()">
+                    </umb-button>
+                    <umb-button ng-if="vm.licenseStatus != 2" type="button"
+                                button-style="success"
+                                label-key="general_submit"
+                                action="vm.submit(createLicenseForm)">
+                    </umb-button>
+                    <button class="btn btn-warning" ng-if="vm.licenseStatus == 2" ng-click="vm.deactivateLicense()" type="button">
+                        <span>Deactivate</span>
+                    </button>
+                </umb-editor-footer-content-right>
+            </umb-editor-footer>
+
+        </umb-editor-view>
+
+    </form>
+
+</div>

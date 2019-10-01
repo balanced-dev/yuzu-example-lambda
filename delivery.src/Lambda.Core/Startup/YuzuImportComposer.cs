@@ -6,9 +6,12 @@ using System.Linq;
 using System.Web;
 using Umbraco.Core;
 using Umbraco.Core.Composing;
+using YuzuDelivery.Core;
 using YuzuDelivery.Umbraco.Blocks;
+using YuzuDelivery.Umbraco.Forms;
 using YuzuDelivery.Umbraco.Grid;
 using YuzuDelivery.Umbraco.Import;
+using Lambda.Core.ViewModels;
 
 namespace Lambda.Core
 {
@@ -21,25 +24,17 @@ namespace Lambda.Core
         {
             var Server = HttpContext.Current.Server;
             var localAssembly = Assembly.GetAssembly(typeof(YuzuImportsComposer));
-            var gridAssembly = Assembly.GetAssembly(typeof(YuzuGridStartup));
 
             var config = new YuzuDeliveryImportConfiguration()
             {
-                ViewModelAssemblies = new Assembly[] { localAssembly, gridAssembly },
+                IsActive = ConfigurationManager.AppSettings["YuzuImportActive"] == "true",
+                DocumentTypeAssemblies = new Assembly[] { localAssembly },
                 ViewModelQualifiedTypeName = "Lambda.Core.ViewModels.{0}, Lambda.Core",
                 UmbracoModelsQualifiedTypeName = "Lambda.Core.UmbracoModels.{0}, Lambda.Core",
                 DataTypeFolder = new DataTypeFolder()
                 {
                     Name = "Lambda",
                     Level = 1
-                },
-                PathLocations = new List<IDataLocation>()
-                {
-                    new DataLocation()
-                    {
-                        Name = "Main",
-                        Path = Server.MapPath(ConfigurationManager.AppSettings["HandlebarsPaths"])
-                    }
                 },
                 DataLocations = new List<IDataLocation>()
                 {
@@ -60,8 +55,11 @@ namespace Lambda.Core
                 CustomConfigFileLocation = Server.MapPath(ConfigurationManager.AppSettings["YuzuImportCustomConfig"])
             };
 
-            config.IgnoreViewmodels.Add("vmBlock_Form");
-            config.IgnoreViewmodels.Add("vmBlock_FormBuilder");
+            config.IgnoreViewmodels.Add<vmBlock_FormButton>();
+            config.IgnoreViewmodels.Add<vmBlock_FormTextArea>();
+            config.IgnoreViewmodels.Add<vmBlock_FormTextInput>();
+
+            /*config.IgnoreViewmodels.Add("vmBlock_FormBuilder");
             config.IgnoreViewmodels.Add("vmBlock_FormFooter");
             config.IgnoreViewmodels.Add("vmBlock_FormButton");
             config.IgnoreViewmodels.Add("vmBlock_FormTextArea");
@@ -70,7 +68,7 @@ namespace Lambda.Core
 
             config.IgnoreViewmodels.Add("vmBlock_DataGridRows");
 
-            config.IgnoreViewmodels.Add("vmBlock_FormBuilderFields");
+            config.IgnoreViewmodels.Add("vmBlock_FormBuilderFields");*/
 
             config.IgnoreProperties.Add("Form");
 
