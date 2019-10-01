@@ -9,7 +9,7 @@ var init = () => {
 			middleware: [
 				{
 					route: '/api',
-					handle: $.blockTemplatesApi
+					handle: $.yuzuDefinitionApi
 				}
 			],
 			index: "templates.html"

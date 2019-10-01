@@ -10,7 +10,7 @@ const templates = require('./templates');
 
 //load modules into gulp friendly container
 $ = require('gulp-load-plugins')({
-	pattern: ['gulp-*', 'gulp.*', 'main-*', 'block-*', 'yuzu-def-*', 'browser-sync', 'run-sequence', 'handlebars', 'path', 'del'],
+	pattern: ['gulp-*', 'gulp.*', 'main-*', 'yuzu-definition-*', 'browser-sync', 'run-sequence', 'handlebars', 'path', 'del'],
 	camelize: true
 }),
 

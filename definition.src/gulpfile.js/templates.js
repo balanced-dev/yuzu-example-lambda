@@ -3,7 +3,7 @@ const { series, parallel } = require('gulp');
 const paths = require('./config').paths; 
 const files = require('./config').files; 
 const server = require('./browser-sync'); 
-const yuzu = require('block-templates-parse');
+const yuzu = require('yuzu-definition-core');
 
 const clearTemplateOutput = () => {
 
@@ -13,7 +13,7 @@ const clearTemplateOutput = () => {
 const renderTemplates = () => {
 
 	return gulp.src(files.templatePages + '/**/*.json')
-		.pipe(yuzu.gulpBuild(files.templatePartials, $.blockHbsHelpers, paths.handlebars.data.layout))
+		.pipe(yuzu.gulpBuild(files.templatePartials, $.yuzuDefinitionHbsHelpers, paths.handlebars.data.layout))
 		.pipe($.rename(function (path) {
 			path.dirname = path.dirname.replace('data', '');
 			path.extname = ".html";

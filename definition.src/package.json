@@ -8,9 +8,6 @@
     "dist": "gulp dist"
   },
   "devDependencies": {
-    "block-hbs-helpers": "^1.0.9",
-    "block-templates-api": "^1.0.4",
-    "block-templates-parse": "^1.2.28",
     "browser-sync": "^2.26.5",
     "colours": "^0.6.0-2",
     "del": "^3.0.0",
@@ -27,6 +24,11 @@
     "gulp-strip-css-comments": "^1.1.0",
     "gulp-util": "^3.0.8",
     "path": "^0.12.7",
-    "prettyjson": "^1.2.1"
-  }
+    "prettyjson": "^1.2.1",
+    "yuzu-definition-api": "^1.0.5",
+    "yuzu-definition-core": "^1.2.31",
+    "yuzu-definition-hbs-helpers": "^1.1.9",
+    "yuzu-definition-ui": "^1.0.13"
+  },
+  "dependencies": {}
 }
