@@ -66,8 +66,8 @@ namespace Lambda.Core
 
             config.IgnoreProperties.Add("Form");
 
-            //config.IgnoreUmbracoModelsForAutomap.Add<Home>();
-            //config.IgnoreUmbracoModelsForAutomap.Add<Cta>();
+            config.IgnoreUmbracoModelsForAutomap.Add<Home>();
+            config.IgnoreUmbracoModelsForAutomap.Add<Cta>();
 
             YuzuDeliveryImport.Initialize(config);
         }
