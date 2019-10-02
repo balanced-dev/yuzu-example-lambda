@@ -319,7 +319,15 @@ Cached/
 !**/[Uu]mbraco/[Dd]eveloper/[Pp]ackages/*
 !**/.nuget/Nuget.exe
 
-!backend.src/lib/**/*.dll
+!delivery.src/lib/**/*.dll
+
+# Yuzu workshop specific
+!delivery.src/Lambda/bin
+delivery.src/Lambda/bin/*
+!delivery.src/Lambda/bin/*Lex*.*
+!delivery.src/Lambda/bin/roslyn
+!delivery.src/Lambda/bin/amd64
+!delivery.src/Lambda/bin/x86
 
 ### Frontend Dist ###
 
@@ -332,5 +340,7 @@ definition.src/_dev/_templates/html/
 definition.src/_dev/_templates/templatesIndex.xml
 
 definition.src/_dev/_source/styles/scss/partials/
-/_dev/_source/styles/scss/partials/
+definition.src/_dev/_source/styles/scss/partials/
+
+delivery.src/Lambda/_templates/
 
