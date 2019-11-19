@@ -60,6 +60,7 @@ namespace Lambda.Core
             config.IgnoreViewmodels.Add<vmBlock_FormTextArea>();
             config.IgnoreViewmodels.Add<vmBlock_FormTextInput>();
 
+            config.IgnoreViewmodels.Add("vmBlock_FormSelect");
             config.IgnoreViewmodels.Add("vmBlock_FormSelectOption");
             config.IgnoreViewmodels.Add("vmSub_FormSelectFormSelectOption");
             config.IgnoreViewmodels.Add("vmSub_FormSelectOption");
