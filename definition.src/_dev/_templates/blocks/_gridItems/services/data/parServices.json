@@ -1,0 +1,70 @@
+{
+    "subtitle": "Everything you need for PR",
+    "title": "A complete PR solution for startups",
+    "text": "Nam liber tempor cum eleifend option congue nihil imper. Nam liber tempor cum soluta nobis.",
+    "items": [
+        {
+            "title": "Publish",
+            "text": "Nam liber tempor cum eleifend option congue nihil imper. Nam liber tempor cum soluta nobis.",
+            "icon": "edit-3"
+        },
+        {
+            "title": "Outreach",
+            "text": "Nam liber tempor cum eleifend option congue nihil imper. Nam liber tempor cum soluta nobis.",
+            "icon": "thumbs-up"
+        },
+        {
+            "title": "Collaborate",
+            "text": "Nam liber tempor cum eleifend option congue nihil imper. Nam liber tempor cum soluta nobis.",
+            "icon": "users"
+        },
+        {
+            "title": "Global",
+            "text": "Nam liber tempor cum eleifend option congue nihil imper. Nam liber tempor cum soluta nobis.",
+            "icon": "globe"
+        },
+        {
+            "title": "Premium support",
+            "text": "Nam liber tempor cum eleifend option congue nihil imper. Nam liber tempor cum soluta nobis.",
+            "icon": "heart"
+        },
+        {
+            "title": "Money back guarantee",
+            "text": "Nam liber tempor cum eleifend option congue nihil imper. Nam liber tempor cum soluta nobis",
+            "icon": "rotate-ccw"
+        }
+    ],
+    "expTitle": "We have got our clients covered in",
+    "expItems": [
+        {
+            "image": {
+                "src": "/_client/images/press/press-1.png"
+            }
+        },
+        {
+            "image": {
+                "src": "/_client/images/press/press-2.png"
+            }
+        },
+        {
+            "image": {
+                "src": "/_client/images/press/press-3.png"
+            }
+        },
+        {
+            "image": {
+                "src": "/_client/images/press/press-4.png"
+            }
+        },
+        {
+            "image": {
+                "src": "/_client/images/press/press-5.png"
+            }
+        },
+        {
+            "image": {
+                "src": "/_client/images/press/press-6.png"
+            }
+        }
+    ]
+}

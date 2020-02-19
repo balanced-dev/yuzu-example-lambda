@@ -159,7 +159,11 @@
                                         break;
 
                                     case "FieldType.DatePicker.cshtml":
-                                        <p style="margin-top: 0;">@(Convert.ToDateTime(field.GetValue()).ToString("f"))</p>
+                                        DateTime dt;
+                                        var fieldValue = field.GetValue();
+                                        var dateValid = DateTime.TryParse(fieldValue != null ? fieldValue.ToString() : string.Empty, out dt);
+                                        var dateStr = dateValid ? dt.ToString("f") : "";
+                                        <p style="margin-top: 0;">@dateStr</p>
                                         break;
 
                                     case "FieldType.CheckboxList.cshtml":

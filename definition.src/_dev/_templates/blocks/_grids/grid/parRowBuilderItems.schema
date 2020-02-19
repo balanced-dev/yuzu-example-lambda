@@ -1,0 +1,32 @@
+{
+    "id": "/parRowBuilderItems",
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "description": "",
+    "type": "array",
+    "items": {
+        "anyOf": [
+            {
+                "$ref": "/parCta"
+            },
+            {
+                "$ref": "/parFeature"
+            },
+            {
+                "$ref": "/parPageHero"
+            },
+            {
+                "$ref": "/parPricing"
+            },
+            {
+                "$ref": "/parServices"
+            },
+            {
+                "$ref": "/parTestimonials"
+            },
+            {
+                "$ref": "/parFaq"
+            }
+        ]
+    },
+    "additionalProperties": false
+}

@@ -4,6 +4,11 @@
       resizeHandle = document.createElement("DIV"),
       settingsArea = document.createElement("DIV"),
       stylesheetLink  = document.createElement('LINK'),
+      yuzuWrapperClasses = {
+        layout: 'yuzu-layout-root',
+        content: 'yuzu-content-root'
+      },
+      errorMessagePrefix = '[YUZU-DEF-UI] - ',
       toggleClass = 'yuzu-overlay--is-open',
       alignRightClass = 'yuzu-overlay--dock-right',
       overlayCookieName = 'yuzu-overlay-user-settings',
@@ -86,7 +91,33 @@
       var response = JSON.parse(e.data);
 
       if(response.action == 'preview') {
-        document.querySelector('.content-root').innerHTML = response.data;
+        if(response.data.indexOf(yuzuWrapperClasses.content) > -1) {
+          var layoutRoot = document.querySelector('.' + yuzuWrapperClasses.layout),
+              responseLayoutRoot = document.createElement('div');
+
+          responseLayoutRoot.innerHTML = response.data;
+
+          var responseContent = responseLayoutRoot.querySelector('.' + yuzuWrapperClasses.layout);
+
+          if(responseContent && layoutRoot) {
+            layoutRoot.innerHTML = responseContent.innerHTML;
+          }
+          else {
+            console.error(errorMessagePrefix + 'Unable to find Yuzu layout wrapper (".'+ yuzuWrapperClasses.layout +'") in document/response');
+          }
+
+          responseLayoutRoot = null;
+        }
+        else {
+          var contentWrapper = document.querySelector('.' + yuzuWrapperClasses.content);
+
+          if(contentWrapper) {
+            contentWrapper.innerHTML = response.data;
+          }
+          else {
+            console.error(errorMessagePrefix + 'Unable to find Yuzu content wrapper (".'+ yuzuWrapperClasses.content +'") in document');
+          }          
+        }
         var refreshEvent = new Event('YUZU:CONTENT-REFRESH');
         document.dispatchEvent(refreshEvent);
       }

@@ -331,16 +331,16 @@ delivery.src/Lambda/bin/*
 
 ### Frontend Dist ###
 
-definition.src/**/_client
-definition.src/**/_templates
 definition.src/**/Uploads
 
-definition.src/_dev/_client/
-definition.src/_dev/_templates/html/
+definition.src/_dev/_client/styles/
+definition.src/_dev/_client/html/
+definition.src/_dev/_client/sassdoc/
 definition.src/_dev/_templates/templatesIndex.xml
 
 definition.src/_dev/_source/styles/scss/partials/
 definition.src/_dev/_source/styles/scss/partials/
 
+delivery.src/Lambda/_client/
 delivery.src/Lambda/_templates/
 

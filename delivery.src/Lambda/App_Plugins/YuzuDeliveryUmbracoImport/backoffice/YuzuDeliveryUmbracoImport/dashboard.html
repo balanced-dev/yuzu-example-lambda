@@ -1,0 +1,14 @@
+﻿<div ng-controller="YuzuImportDashboardController as vm">
+    <umb-editor-view footer="false">
+        <umb-editor-header name="vm.page.title"
+                           name-locked="true"
+                           hide-alias="true"
+                           hide-description="true"
+                           hide-icon="true">
+
+        </umb-editor-header>
+        <umb-editor-container class="form-horizontal">
+            <umb-editor-sub-views sub-views="vm.page.navigation" model="vm"></umb-editor-sub-views>
+        </umb-editor-container>
+    </umb-editor-view>
+</div>

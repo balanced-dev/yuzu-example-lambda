@@ -1,7 +1,7 @@
 {
     "refs": {
         "/moreLink": [
-            "/parDataLink"
+            "/dataLink"
         ]
     }
 }

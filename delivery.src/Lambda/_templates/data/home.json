@@ -1,22 +1,19 @@
 {
-    "grid": {
+    "body": {
         "rows": [
             {
                 "items": [
                     {
-                        "title": "Yuzu helps me qickly see new possibilities",
-                        "text": "So that I can understand how state affects the UI",
+                        "title": "Promote your startup with Lambda",
+                        "text": "Nam liber tempor cum eleifend option congue nihil imper. Nam liber tempor cum soluta nobis.",
                         "link": {
-                            "label": "Find out more",
-                            "href": "",
-                            "title": ""
+                            "label": "Get started now"
                         },
                         "backgroundImage": {
-                            "src": "/_client/img/bg3.jpg",
-                            "alt": ""
+                            "src": "/_client/img/parallex.jpg"
                         },
                         "_ref": "/parPageHero",
-                        "yuzu-path": "/grid/rows[0]/items[0]"
+                        "yuzu-path": "/body/rows[0]/items[0]"
                     }
                 ]
             },
@@ -92,7 +89,7 @@
                             }
                         ],
                         "_ref": "/parServices",
-                        "yuzu-path": "/grid/rows[1]/items[0]"
+                        "yuzu-path": "/body/rows[1]/items[0]"
                     }
                 ]
             },
@@ -153,7 +150,7 @@
                             }
                         ],
                         "_ref": "/parFeature",
-                        "yuzu-path": "/grid/rows[2]/items[0]"
+                        "yuzu-path": "/body/rows[2]/items[0]"
                     }
                 ]
             },
@@ -192,7 +189,7 @@
                             }
                         ],
                         "_ref": "/parTestimonials",
-                        "yuzu-path": "/grid/rows[3]/items[0]"
+                        "yuzu-path": "/body/rows[3]/items[0]"
                     }
                 ]
             },
@@ -265,7 +262,7 @@
                             }
                         ],
                         "_ref": "/parPricing",
-                        "yuzu-path": "/grid/rows[4]/items[0]"
+                        "yuzu-path": "/body/rows[4]/items[0]"
                     }
                 ]
             },
@@ -306,7 +303,7 @@
                             "label": "Get in touch"
                         },
                         "_ref": "/parFaq",
-                        "yuzu-path": "/grid/rows[5]/items[0]"
+                        "yuzu-path": "/body/rows[5]/items[0]"
                     }
                 ]
             },
@@ -320,47 +317,51 @@
                         },
                         "form": {
                             "testForm": {
-                                "isSubmitted": false,
-                                "submittedMessage": "Your submitted message here",
+                                "isSuccess": false,
+                                "successMessage": "Your submitted message here",
                                 "validation": {
                                     "title": "Form Builder Validation",
-                                    "textHtml": ""
+                                    "message": ""
                                 },
-                                "fields": [
+                                "fieldsets": [
                                     {
-                                        "placeholder": "Full name",
-                                        "_ref": "/parFormTextInput"
-                                    },
-                                    {
-                                        "placeholder": "Website",
-                                        "_ref": "/parFormTextInput"
-                                    },
-                                    {
-                                        "type": "email",
-                                        "placeholder": "Email address",
-                                        "_ref": "/parFormTextInput"
-                                    },
-                                    {
-                                        "name": "message",
-                                        "label": "Message",
-                                        "value": "",
-                                        "id": "",
-                                        "placeholder": "Write your message here",
-                                        "isRequired": true,
-                                        "isDisabled": false,
-                                        "isReadonly": false,
-                                        "_ref": "/parFormTextArea",
-                                        "yuzu-path": "/grid/rows[6]/items[0]/form/testForm/fields[3]"
+                                        "fields": [
+                                            {
+                                                "placeholder": "Full name",
+                                                "_ref": "/parFormTextInput"
+                                            },
+                                            {
+                                                "placeholder": "Website",
+                                                "_ref": "/parFormTextInput"
+                                            },
+                                            {
+                                                "type": "email",
+                                                "placeholder": "Email address",
+                                                "_ref": "/parFormTextInput"
+                                            },
+                                            {
+                                                "name": "message",
+                                                "label": "Message",
+                                                "value": "",
+                                                "id": "",
+                                                "placeholder": "Write your message here",
+                                                "isRequired": true,
+                                                "isDisabled": false,
+                                                "isReadonly": false,
+                                                "_ref": "/parFormTextArea",
+                                                "yuzu-path": "/body/rows[6]/items[0]/form/testForm/fieldsets[0]/fields[3]"
+                                            }
+                                        ]
                                     }
                                 ],
-                                "submitButtonLabel": "Create your account",
+                                "submitButtonText": "Create your account",
                                 "_ref": "/parFormBuilder"
                             },
-                            "_ref": "/parDataForm",
-                            "yuzu-path": "/grid/rows[6]/items[0]/form"
+                            "_ref": "/parForm",
+                            "yuzu-path": "/body/rows[6]/items[0]/form"
                         },
                         "_ref": "/parCta",
-                        "yuzu-path": "/grid/rows[6]/items[0]"
+                        "yuzu-path": "/body/rows[6]/items[0]"
                     }
                 ]
             }

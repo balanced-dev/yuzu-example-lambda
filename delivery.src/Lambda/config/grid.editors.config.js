@@ -7,12 +7,14 @@
   },
   {
     "name": "Image",
+    "nameTemplate": "{{ value && value.udi ? (value.udi | ncNodeName) : '' }}",
     "alias": "media",
     "view": "media",
     "icon": "icon-picture"
   },
   {
     "name": "Macro",
+    "nameTemplate": "{{ value && value.macroAlias ? value.macroAlias : '' }}",
     "alias": "macro",
     "view": "macro",
     "icon": "icon-settings-alt"
@@ -25,6 +27,7 @@
   },
   {
     "name": "Headline",
+    "nameTemplate": "{{ value }}",
     "alias": "headline",
     "view": "textstring",
     "icon": "icon-coin",
@@ -35,6 +38,7 @@
   },
   {
     "name": "Quote",
+    "nameTemplate": "{{ value ? value.substring(0,32) + (value.length > 32 ? '...' : '') : '' }}",
     "alias": "quote",
     "view": "textstring",
     "icon": "icon-quote",
@@ -44,43 +48,20 @@
     }
   },
   {
-    "name": "Data Grid Rows",
-    "alias": "dataGridRows",
+    "name": "Row Builder",
+    "alias": "rowBuilder",
     "view": "/App_Plugins/DocTypeGridEditor/Views/doctypegrideditor.html",
     "render": "/App_Plugins/DocTypeGridEditor/Render/DocTypeGridEditor.cshtml",
     "icon": "icon-item-arrangement",
     "config": {
       "allowedDocTypes": [
-        "cta",
-        "faq",
-        "feature",
-        "pageHero",
-        "pricing",
-        "services",
-        "testimonials"
-      ],
-      "enablePreview": true,
-      "viewPath": "/Views/Partials/Grid/Editors/DocTypeGridEditor/",
-      "previewViewPath": "/Views/Partials/Grid/Editors/DocTypeGridEditor/Previews/",
-      "previewCssFilePath": "",
-      "previewJsFilePath": ""
-    }
-  },
-  {
-    "name": "Grid",
-    "alias": "grid",
-    "view": "/App_Plugins/DocTypeGridEditor/Views/doctypegrideditor.html",
-    "render": "/App_Plugins/DocTypeGridEditor/Render/DocTypeGridEditor.cshtml",
-    "icon": "icon-item-arrangement",
-    "config": {
-      "allowedDocTypes": [
-        "cta",
-        "feature",
-        "pageHero",
-        "pricing",
-        "services",
-        "testimonials",
-        "faq"
+        "\\bcta\\b",
+        "\\bfeature\\b",
+        "\\bpageHero\\b",
+        "\\bpricing\\b",
+        "\\bservices\\b",
+        "\\btestimonials\\b",
+        "\\bfaq\\b"
       ],
       "enablePreview": true,
       "viewPath": "/Views/Partials/Grid/Editors/DocTypeGridEditor/",

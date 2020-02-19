@@ -1,0 +1,13 @@
+{   
+	css: [
+	  "~/App_Plugins/YuzuDeliveryUmbracoImport/UmbracoImportViewModel.css"
+  ],
+  javascript: [
+    "~/app_plugins/YuzuDeliveryUmbracoImport/backoffice/YuzuDeliveryUmbracoImport/dashboard.js",
+    "~/App_Plugins/YuzuDeliveryUmbracoImport/UmbracoImportViewModelList.controller.js",
+    "~/App_Plugins/YuzuDeliveryUmbracoImport/contentDialog/contentDialog.controller.js",
+    "~/App_Plugins/YuzuDeliveryUmbracoImport/settingsDialog/settingsDialog.controller.js",
+    "~/App_Plugins/YuzuDeliveryUmbracoImport/licenseDialog/licenseDialog.controller.js",
+    "~/App_Plugins/YuzuDeliveryUmbracoImport/loggingDialog/loggingDialog.controller.js"
+  ]
+}

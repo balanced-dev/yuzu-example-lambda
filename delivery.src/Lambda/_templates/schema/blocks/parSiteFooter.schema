@@ -20,7 +20,7 @@
                     "navLinks": {
                         "type": "array",
                         "items": {
-                            "$ref": "./parDataLink.schema"
+                            "$ref": "/dataLink"
                         }
                     }
                 }
@@ -29,7 +29,7 @@
         "socialLinks": {
             "type": "array",
             "items": {
-                "$ref": "./parDataLink.schema"
+                "$ref": "/dataLink"
             }
         },
         "_ref": {

@@ -11,10 +11,10 @@
             "type": "string"
         },
         "link": {
-            "$ref": "./parDataLink.schema"
+            "$ref": "/dataLink"
         },
         "backgroundImage": {
-            "$ref": "./parDataImage.schema"
+            "$ref": "/dataImage"
         },
         "_ref": {
             "type": "string"

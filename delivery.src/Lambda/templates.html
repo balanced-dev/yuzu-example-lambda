@@ -2,23 +2,74 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>Hifi</title>
+		<title>Lambda - Yuzu Project</title>
 		<meta name="description" content="" />
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
-		<link rel="apple-touch-icon" sizes="180x180" href="/_client/images/favicons/apple-touch-icon.png">
-		<link rel="icon" type="image/png" sizes="32x32" href="/_client/images/favicons/favicon-32x32.png">
-		<link rel="icon" type="image/png" sizes="16x16" href="/_client/images/favicons/favicon-16x16.png">
-		<link rel="manifest" href="/_client/images/favicons/site.webmanifest">
-		<link rel="mask-icon" href="/_client/images/favicons/safari-pinned-tab.svg" color="#000000">
-		<link rel="shortcut icon" href="/_client/images/favicons/favicon.ico">
-		<meta name="msapplication-TileColor" content="#ffffff">
-		<meta name="msapplication-config" content="/_client/images/favicons/browserconfig.xml">
-		<meta name="theme-color" content="#ffffff">
-
 		<script src="/yuzu-def-ui/websocketClient.js" defer></script>
+		<link href="https://fonts.googleapis.com/css?family=Lato:400,900&display=swap" rel="stylesheet">
+		<style>
+			html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:block}h1,h2,h3,h4,h5,p{margin-bottom:0;margin-top:0;-webkit-margin-before:0;margin-block-start:0;-webkit-margin-after:0;margin-block-end:0}strong{font-weight:700}html{font-family:Lato,sans-serif}.templates{background-color:#f5f7fa}.templates__header,.templates__section{box-shadow:0 1.4px 2.2px -14px rgba(0,0,0,.02),0 3.3px 5.3px -14px rgba(0,0,0,.028),0 6.3px 10px -14px rgba(0,0,0,.035),0 11.2px 17.9px -14px rgba(0,0,0,.042),0 20.9px 33.4px -14px rgba(0,0,0,.05),0 50px 80px -14px rgba(0,0,0,.07)}.templates__header{-webkit-box-align:center;align-items:center;background-color:#e2e8f0;display:-webkit-box;display:flex;margin-bottom:2rem;padding:1rem}.templates__header__logo{display:block;height:80px}.templates__header__title{color:#202733;font-size:1.5rem;line-height:1;margin:0 auto}.templates__content{-webkit-box-align:start;align-items:flex-start;display:-webkit-box;display:flex;flex-wrap:wrap;-webkit-box-pack:justify;justify-content:space-between;margin:0 auto;max-width:1400px;padding:0 .5rem}.templates__section{background-color:#f7fafb;border-radius:5px;-webkit-box-flex:1;flex:1 1 0;font-size:1rem;line-height:1.5;margin:.5rem;min-width:275px;overflow:hidden}.templates__section__item,.templates__section__title{padding-left:1rem;padding-right:1rem}.templates__section__title{color:#384657;font-weight:900;font-size:1rem;line-height:1;letter-spacing:.04em;text-transform:uppercase;background-color:#fefefe;margin:0;padding-bottom:.8rem;padding-top:.8rem}.templates__section__item{color:#202733;display:block;padding-bottom:.5rem;padding-top:.5rem;text-decoration:none}.templates__section__item:not(:last-child){border-bottom:1px solid #e1e8f0}.templates__section__item p:not(:last-child){margin-bottom:1rem}.templates__yuzu-overlay-icon{display:inline-block;height:1.4em;vertical-align:middle;width:1.4em}
+		</style>
 	</head>
-	<body>
-
+	<body class="templates">
+		<header class="templates__header">
+			<svg class="templates__header__logo" version="1.1"xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+				viewBox="0 0 99.1 127.9" style="enable-background:new 0 0 99.1 127.9;fill:#231F20;" xml:space="preserve">
+				<title>Yuzu Logo</title>
+				<path d="M10,127.5H8.5v-7.3L0,107.4h1.7l7.6,11.3l7.5-11.3h1.7L10,120.2V127.5z M45.1,118.9c0,5.4-3.3,9-8.2,9
+				s-8.3-3.6-8.3-9v-11.4h1.5v11.4c0,4.6,2.7,7.6,6.8,7.6s6.7-3,6.7-7.6v-11.4h1.5V118.9z M71.4,127.5H56.2v-1l13.2-17.8H56.6v-1.3
+				h14.8v1.1l-13,17.7h13V127.5z M99.1,118.9c0,5.4-3.3,9-8.2,9s-8.3-3.6-8.3-9v-11.4h1.5v11.4c0,4.6,2.7,7.6,6.8,7.6s6.7-3,6.7-7.6
+				v-11.4h1.5V118.9z M51,81c-22.4,0-40.5-18.1-40.5-40.5S28.6,0,51,0s40.5,18.1,40.5,40.5C91.5,62.8,73.4,81,51,81
+				C51.1,81,51,81,51,81z M51,1C29.2,1,11.5,18.7,11.5,40.5S29.2,80,51,80c9.8,0,14.8-11.1,21.5-17.3c7-6.5,18-10.3,18-22.2
+				C90.5,18.7,72.8,1,51,1z"/>
+			</svg>
+			<h1 class="templates__header__title">Lambda Dashboard</h1>
+		</header>
+		<main class="templates__content">
+			<section class="templates__section">
+				<h2 class="templates__section__title">Getting started</h2>
+				<div class="templates__section__item">
+					<p>
+						To begin, click the "<svg class="templates__yuzu-overlay-icon" version="1.1"xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+							viewBox="0 0 32 32" style="background-color:#1FBB7A;fill:none;stroke:#FFFFFF;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" xml:space="preserve">
+							<line class="st1" x1="10" y1="16" x2="22" y2="16"/>
+							<line class="st1" x1="10" y1="12" x2="22" y2="12"/>
+							<line class="st1" x1="10" y1="20" x2="22" y2="20"/>
+						</svg>" button, located on either the left or right hand side of the screen, labelled "Dev Tools".
+					</p>
+					<p>
+						From there you can navigate around the solution: you're able to view all blocks, pages and layouts from the "Blocks" tab, all the associated states of your selection in the "Context" tab and edit the underlying JSON file for that state from the "Data" tab.
+					</p>
+				</div>
+			</section>
+			<section class="templates__section">
+				<h2 class="templates__section__title">Project Documentation</h2>
+				<a class="templates__section__item" href="/_client/sassdoc/index.html">
+					SCSS Documentation (sassdoc)
+				</a>
+			</section>
+			<section class="templates__section">
+				<h2 class="templates__section__title">Tool Documentation</h2>
+				<a class="templates__section__item" href="https://yuzudocs.balanced.dev/" target="_blank">
+					Yuzu
+				</a>
+				<a class="templates__section__item" href="https://handlebarsjs.com/" target="_blank">
+					Handlebars
+				</a>							
+				<a class="templates__section__item" href="https://sass-lang.com/documentation/file.SASS_REFERENCE.html" target="_blank">
+					Sass
+				</a>
+				<a class="templates__section__item" href="https://a11yproject.com/patterns/" target="_blank">
+					A11Y Project
+				</a>
+				<a class="templates__section__item" href="http://sassdoc.com/annotations/" target="_blank">
+					sassdoc
+				</a>
+				<a class="templates__section__item" href="https://stimulusjs.org/reference/controllers" target="_blank">
+					Stimulus.js
+				</a>
+			</section>
+		</main>
 	</body>
 </html>

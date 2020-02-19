@@ -846,22 +846,41 @@ angular.module("umbraco").controller("UmbracoForms.Editors.Form.CreateController
 			navigationService.hideDialog(showMenu);
 		};
 });
-angular.module("umbraco")
-.controller("UmbracoForms.Editors.Form.DeleteController",
-	function ($scope, formResource, navigationService, treeService) {
+(function () {
+	"use strict";
 
-	    $scope.delete = function (id) {
-	        formResource.deleteByGuid(id).then(function () {
-	            treeService.removeNode($scope.currentNode);
-	            navigationService.hideNavigation();
+	function Controller($scope, formResource, navigationService, notificationsService, treeService) {
 
-	        });
+		var vm = this;
+		vm.buttonState = "init";
 
-	    };
-	    $scope.cancelDelete = function () {
-	        navigationService.hideNavigation();
-	    };
-	});
+		vm.deleteForm = deleteForm;
+		vm.cancelDelete = cancelDelete;
+
+		function cancelDelete () {
+			navigationService.hideNavigation();
+		};
+
+		function deleteForm(id) {
+
+			vm.buttonState = "busy";
+			formResource.deleteByGuid(id).then(function() {
+				vm.buttonState = "success";
+				treeService.removeNode($scope.currentNode);
+				navigationService.hideNavigation();
+
+				notificationsService.success("Successfully deleted the form");
+			}, function(err) {
+				vm.buttonState = "error";
+				notificationsService.error("Form failed to delete", err.data.Message);
+			});
+
+		}
+	}
+
+	angular.module("umbraco").controller("UmbracoForms.Editors.Form.DeleteController", Controller);
+
+})();
 angular.module("umbraco").controller("UmbracoForms.Editors.Form.EditController",
 
     function ($scope, $routeParams, formResource, editorState, editorService, formService, notificationsService, contentEditingHelper, formHelper, navigationService, userService, securityResource, localizationService, workflowResource) {
@@ -1733,18 +1752,19 @@ angular.module("umbraco").controller("UmbracoForms.Editors.Form.EntriesControlle
 		}
 	};
 
-	$scope.toggleAll = function(allIsChecked){
-
-		$scope.selectedRows.length = 0;
-
+	$scope.toggleAll = function(){
+	    
+		var newValue = !$scope.allIsChecked;
+		
 		for (var i = 0; i < $scope.records.results.length; i++) {
 			var entity = $scope.records.results[i];
-			entity.selected = allIsChecked;
 
-			if(allIsChecked){
-				$scope.selectedRows.push(entity.id);
-			}
+			if(entity.selected !== newValue){
+                $scope.toggleRow(entity);
+            }
+           
 		}
+
 	};
 
 	$scope.executeRecordSetAction = function (action) {
@@ -5240,28 +5260,67 @@ angular.module('umbraco.services').factory('formService', formService);
 
 })();
 
-angular.module('umbraco.filters').filter('truncate', function() {
-    
-    return function(input, noOfChars, appendDots) {
-        
-        //Check the length of the text we are filtering
-        //If its greater than noOfChars param
-        if(input.length > noOfChars){
-            //Trim the text to the length of the param
-            input = input.substr(0, noOfChars);
-            
-            //Only append the dots if we truncated
-            //Append Dots is a bool
-            if(appendDots){
-                input = input + "...";
-            }
-        }
-        
-        return input;
-    };
-  
-})
-.filter('fileName', function() {
+
+// Testing if filter already exists, otherwise we will create it. 
+angular.module("umbraco.filters").config(function($injector, $provide) {
+	if($injector.has('truncateFilter')) {
+		// Yep, we already got the filter!
+	} else {
+		
+        // injecting the filter on the provider, notice we need to add 'Filter' to the name for it to be a filter.
+        $provide.provider('truncateFilter', function() {
+    		return {
+                $get: function () {
+                    
+                    // Filter code
+                    return function (value, wordwise, max, tail) {
+						
+                        if (!value) return '';
+						
+                        /* 
+						Overload-fix to support Forms Legacy Version:
+						
+						We are making this hack to support the old version of the truncate filter.
+						The old version took different attributes, this code block checks if the first argument isnt a boolean, meaning its not the new version, meaning that the filter is begin used in the old way.
+						Therefor we use the second argument(max) to indicate wether we want a tail (…) and using the first argument(wordwise) as the second argument(max amount of characters)
+						*/
+                        if (typeof(wordwise) !== 'boolean') {
+                            // switch arguments around to fit Forms version.
+                            if (max !== true) {
+                                tail = '';
+                            }
+                            max = wordwise;
+                            wordwise = false;
+                        }
+                        // !end of overload fix.
+
+                        max = parseInt(max, 10);
+                        if (!max) return value;
+                        if (value.length <= max) return value;
+
+                        tail = (!tail && tail !== '') ? '…' : tail;
+
+                        if (wordwise && value.substr(max, 1) === ' ') {
+                          max++;
+                        }
+                        value = value.substr(0, max);
+
+                        if (wordwise) {
+                          var lastspace = value.lastIndexOf(' ');
+                          if (lastspace !== -1) {
+                              value = value.substr(0, lastspace+1);
+                          }
+                        }
+
+                        return value + tail;
+                    };
+                }
+    		}
+    	});
+    }
+});
+
+angular.module('umbraco.filters').filter('fileName', function() {
     
     return function(input) {
         

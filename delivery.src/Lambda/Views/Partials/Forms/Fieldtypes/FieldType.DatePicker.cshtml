@@ -1,7 +1,7 @@
 @model Umbraco.Forms.Mvc.Models.FieldViewModel        
 @{
-    string val = string.Empty;
-    if (Model.ValueAsObject != null && Equals(Model.ValueAsObject, string.Empty))
+    string val = Model.Values.LastOrDefault()?.ToString() ?? string.Empty;
+    if (Model.ValueAsObject != null && !Equals(Model.ValueAsObject, string.Empty))
     {
         try
         {
@@ -9,9 +9,8 @@
             d = (DateTime) Model.ValueAsObject;
             val = d.ToShortDateString();
         }
-        catch (Exception)
-        {
-            val = Model.ValueAsObject.ToString();
+        catch {
+            //ignore
         }
     }
 }

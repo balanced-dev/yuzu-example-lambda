@@ -11,11 +11,11 @@
             "type": "string"
         },
         "form": {
-            "$ref": "./parDataForm.schema",
+            "$ref": "/dataForm",
             "anyOfType": "parFormBuilder"
         },
         "backgroundImage": {
-            "$ref": "./parDataImage.schema"
+            "$ref": "/dataImage"
         },
         "_ref": {
             "type": "string"

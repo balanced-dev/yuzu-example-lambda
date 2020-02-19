@@ -1,0 +1,13 @@
+{
+    "title": "This is a different state",
+    "text": "Some copy",
+    "link": {
+        "label": "A New Button",
+        "href": "",
+        "title": ""
+    },
+    "backgroundImage": {
+        "src": "/_client/images/bg22.jpg",
+        "alt": ""
+    }
+}

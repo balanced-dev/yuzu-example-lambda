@@ -4,15 +4,15 @@
     "description": "",
     "type": "object",
     "properties": {
-        "grid": {
-            "$ref": "./parDataGridRows.schema",
-            "anyOfType": "parGrid"
+        "body": {
+            "$ref": "/dataRows",
+            "anyOfType": "parRowBuilder"
         },
         "header": {
-            "$ref": "./parSiteHeader.schema"
+            "$ref": "/parSiteHeader"
         },
         "footer": {
-            "$ref": "./parSiteFooter.schema"
+            "$ref": "/parSiteFooter"
         }
     },
     "additionalProperties": false

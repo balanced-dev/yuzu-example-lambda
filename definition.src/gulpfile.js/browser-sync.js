@@ -18,6 +18,7 @@ var init = () => {
 		ui: {
 			port: 3001
 		},
+		ghostMode: false, // Causes issues with yuzu-def-ui (overlay)
 		cors: true
 	});
 

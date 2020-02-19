@@ -33,7 +33,7 @@
                         }
                     },
                     "link": {
-                        "$ref": "./parDataLink.schema"
+                        "$ref": "/dataLink"
                     },
                     "primary": {
                         "type": "boolean"
