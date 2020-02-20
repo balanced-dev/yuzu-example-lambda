@@ -312,8 +312,23 @@
     <Reference Include="Umbraco.Web.UI, Version=8.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\UmbracoCms.Web.8.5.3\lib\net472\Umbraco.Web.UI.dll</HintPath>
     </Reference>
-    <Reference Include="YuzuDelivery.Umbraco.Members, Version=1.2.8.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\YuzuDelivery.Umbraco.Members.1.2.8\lib\net472\YuzuDelivery.Umbraco.Members.dll</HintPath>
+    <Reference Include="YuzuDelivery.Core, Version=1.0.38.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\YuzuDelivery.Core.1.0.38\lib\net472\YuzuDelivery.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="YuzuDelivery.Umbraco.Core, Version=1.2.9.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\YuzuDelivery.Umbraco.Core.1.2.9\lib\net472\YuzuDelivery.Umbraco.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="YuzuDelivery.Umbraco.Forms, Version=1.2.9.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\YuzuDelivery.Umbraco.Forms.1.2.9\lib\net472\YuzuDelivery.Umbraco.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="YuzuDelivery.Umbraco.Grid, Version=1.2.9.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\YuzuDelivery.Umbraco.Grid.1.2.9\lib\net472\YuzuDelivery.Umbraco.Grid.dll</HintPath>
+    </Reference>
+    <Reference Include="YuzuDelivery.Umbraco.Import, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\YuzuDelivery.Umbraco.Import.Core.1.0.72\lib\net472\YuzuDelivery.Umbraco.Import.dll</HintPath>
+    </Reference>
+    <Reference Include="YuzuDelivery.Umbraco.Members, Version=1.2.9.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\YuzuDelivery.Umbraco.Members.1.2.9\lib\net472\YuzuDelivery.Umbraco.Members.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -557,10 +572,10 @@
     <Content Include="App_Plugins\UmbracoForms\Data\Web.config" />
     <Content Include="App_Plugins\UmbracoForms\Data\Templates\contactform.json" />
     <Content Include="App_Plugins\UmbracoForms\Data\Templates\commentform.json" />
+    <Content Include="App_Plugins\YuzuDeliveryUmbracoImport\package.manifest" />
     <Content Include="App_Plugins\YuzuDeliveryViewModelsBuilder\package.manifest" />
     <Content Include="App_Plugins\YuzuBackofficeCss\package.manifest" />
     <Content Include="App_Plugins\YuzuBackofficeCss\DocTypeGridEditorPreviewer.cshtml" />
-    <Content Include="App_Plugins\YuzuDeliveryUmbracoImport\package.manifest" />
     <None Include="packages.config" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\Partials\Grid\Editors\Textstring.cshtml" />
@@ -609,6 +624,8 @@
     <Content Include="Views\Partials\Forms\Emails\Example-Template.cshtml" />
     <Content Include="Views\MacroPartials\RenderUmbracoFormScripts.cshtml" />
     <Content Include="Views\MacroPartials\InsertUmbracoFormWithTheme.cshtml" />
+    <Content Include="Views\master.cshtml" />
+    <Content Include="Views\home.cshtml" />
     <Content Include="Views\Partials\Forms\YuzuForms.cshtml" />
     <Content Include="Views\Partials\Register.cshtml" />
     <Content Include="Views\Partials\Logout.cshtml" />
@@ -616,36 +633,12 @@
     <Content Include="Views\Partials\ForgottenPassword.cshtml" />
     <Content Include="Views\Partials\ChangePassword.cshtml" />
     <Content Include="Views\Partials\ChangeMember.cshtml" />
-    <Content Include="Views\master.cshtml" />
-    <Content Include="Views\home.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\..\Yuzu\backend\YuzuDelivery.Core\YuzuDelivery.Core\YuzuDelivery.Core.csproj">
-      <Project>{9a998ea1-26c6-4100-b915-d520551cd463}</Project>
-      <Name>YuzuDelivery.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\..\Yuzu\backend\YuzuDelivery.Umbraco.Import\src\YuzuDelivery.Umbraco.Import\YuzuDelivery.Umbraco.Import.csproj">
-      <Project>{b53158ed-127f-4814-b5c5-5d29147b28cf}</Project>
-      <Name>YuzuDelivery.Umbraco.Import</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\..\Yuzu\backend\YuzuDelivery.Umbraco\src\Core\YuzuDelivery.Umbraco.Core.csproj">
-      <Project>{a9b8f2ac-90f9-4219-bcda-7ff6e8266c19}</Project>
-      <Name>YuzuDelivery.Umbraco.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\..\Yuzu\backend\YuzuDelivery.Umbraco\src\Forms\YuzuDelivery.Umbraco.Forms.csproj">
-      <Project>{e1b59baf-a544-4a74-a538-9464182572d8}</Project>
-      <Name>YuzuDelivery.Umbraco.Forms</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\..\Yuzu\backend\YuzuDelivery.Umbraco\src\Grid\YuzuDelivery.Umbraco.Grid.csproj">
-      <Project>{ec27df56-5a85-4cca-9720-cf000269be1f}</Project>
-      <Name>YuzuDelivery.Umbraco.Grid</Name>
-    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
