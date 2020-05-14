@@ -1,0 +1,111 @@
+﻿<div class="yuzu-import-dialog umbracoDialog" ng-controller="Yuzu.Delivery.UmbracoImportViewModel.AddGroupsDialog as vm">
+
+    <form name="storeContactAsForm" no-validate val-form-manager>
+
+        <umb-editor-view>
+
+            <umb-editor-header name="'Globally Add Group Mappings'"
+                               name-locked="true"
+                               hide-alias="true"
+                               hide-icon="true"
+                               hide-description="true">
+            </umb-editor-header>
+
+            <umb-editor-container>
+                <umb-load-indicator ng-if="vm.loading">
+                </umb-load-indicator>
+
+                <div class="umb-pane" ng-if="!vm.loading">
+
+                    <umb-box>
+                        <umb-box-content>
+
+                            <div class="umb-table-condensed">
+                                <div class="umb-table-head">
+                                    <div class="umb-table-row">
+                                        <div class="umb-table-cell">
+                                        </div>
+                                        <div class="umb-table-cell not-fixed">
+                                            ViewModel
+                                        </div>
+                                        <div class="umb-table-cell">
+                                            Parent Viewmodel
+                                        </div>
+                                        <div class="umb-table-cell">
+                                            Property Name
+                                        </div>
+                                        <div class="umb-table-cell flx-s0 flx-g0">
+                                            Nested
+                                        </div>
+                                        <div class="umb-table-cell">
+                                            Group Name
+                                        </div>
+                                        <div class="umb-table-cell">
+                                            Merge into Document Type
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="umb-table-body">
+                                    <div class="umb-table-row -selectable {{group.toAdd ? '-selected' : ''}}" ng-repeat="group in vm.possibleGroups" ng-click="vm.changeStatus(group)">
+                                        <div class="umb-table-cell">
+                                            <i ng-if="group.exists" class="icon medium icon-check color-green"></i>
+                                            <i ng-if="group.toAdd" class="icon medium icon-add color-amber"></i>
+                                            <i ng-if="!(group.exists || group.toAdd)" class="icon medium icon-delete color-red"></i>
+                                        </div>
+                                        <div class="umb-table-cell">
+                                            {{group.childViewmodel}}
+                                        </div>
+                                        <div class="umb-table-cell not-fixed">
+                                            {{group.parentViewmodel}}
+                                        </div>
+                                        <div class="umb-table-cell">
+                                            {{group.propertyName}}
+                                        </div>
+                                        <div class="umb-table-cell flx-s0 flx-g0">
+                                            <i ng-if="group.isNested" class="icon medium icon-check color-green"></i>
+                                            <i ng-if="!group.isNested" class="icon medium icon-delete color-red"></i>
+                                        </div>
+                                        <div class="umb-table-cell">
+                                            <input type="text" class="input-with-alias" style="margin-bottom: 0;" ng-change="vm.selectGroup(group)" ng-click="vm.noop($event)" ng-model="group.group" ng-disabled="group.exists" />
+                                        </div>
+                                        <div class="umb-table-cell">
+                                            <umb-control-group>
+                                                <select ng-model="group.documentTypeAlias" ng-change="vm.selectGroup(group)" ng-click="vm.noop($event)" ng-disabled="group.exists">
+                                                    <option ng-value="''" ng-if="!group.documentTypeAlias">Add Default</option>
+                                                    <option ng-repeat="option in vm.contentTypes" ng-selected="group.documentTypeAlias == option.alias" ng-value="option.alias">{{option.name}}</option>
+                                                </select>
+                                            </umb-control-group>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </umb-box-content>
+                    </umb-box>
+
+                </div>
+
+            </umb-editor-container>
+
+            <umb-editor-footer>
+                <umb-editor-footer-content-right>
+                    <umb-button type="button"
+                                button-style="link"
+                                label-key="general_close"
+                                shortcut="esc"
+                                action="vm.close()">
+                    </umb-button>
+                    <umb-button type="button"
+                                button-style="success"
+                                label-key="general_submit"
+                                state="vm.buttonState"
+                                action="vm.submit()">
+                    </umb-button>
+                </umb-editor-footer-content-right>
+            </umb-editor-footer>
+
+        </umb-editor-view>
+
+    </form>
+
+</div>

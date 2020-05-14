@@ -144,7 +144,7 @@
                                 <option value="">Validation</option>
                             </select>
 
-                            <textarea class="editor-validation-pattern"
+                            <textarea class="editor-validation-pattern umb-forms__validation-pattern"
                                       placeholder="Enter a regular expression"
                                       ng-model="model.field.regex"
                                       ng-change="vm.changeValidationPattern()"
@@ -152,8 +152,7 @@
                                       umb-auto-resize
                                       focus-when="{{vm.focusOnPatternField}}"
                                       overlay-submit-on-enter>
-                </textarea>
-
+                            </textarea>                            
                             <div ng-if="model.field.regex">
                                 <input class="-full-width-input" type="text" ng-model="model.field.invalidErrorMessage" placeholder="Enter a field invalid message...">
                             </div>

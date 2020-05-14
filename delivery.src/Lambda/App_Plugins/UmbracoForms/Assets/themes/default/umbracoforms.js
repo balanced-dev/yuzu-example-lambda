@@ -22,7 +22,7 @@
         configureUmbracoFormsValidation();
 
         for (var i = 0; i < formsCollection.length; i++) {
-            init({ form: formsCollection[i]});
+            init({ form: JSON.parse(decodeURI(formsCollection[i])) });
         }
     }
 
@@ -32,7 +32,7 @@
 
         var forms = $('.umbraco-forms-form');
 
-        forms.each(function(i, form){
+        forms.each(function (i, form) {
             dependencyCheck(form);
 
             var page = $(this).find('.umbraco-forms-page');
@@ -54,7 +54,7 @@
 
             $.validator.unobtrusive.adapters.addBool("requiredcb", "required");
 
-         
+
             $.validator.addMethod("umbracoforms_regex", function (value, element) {
 
                 var regex = $(element).attr("data-regex");
@@ -156,7 +156,7 @@
         self.fieldConditions = fieldConditions;
         self.values = values;
         self.dataTypes = {};
-        
+
         //Iterates through all the form elements found on the page to update the registered value
         function populateFieldValues(page, formValues, dataTypes) {
             var $page = $(page);
@@ -216,18 +216,18 @@
                 if ((value || "") === expected) {
                     return true;
                 }
-                if(value == null){
+                if (value == null) {
                     return (expected == value);
                 }
 
-                if(dataType === "checkbox"){
-                    if(expected.toUpperCase() === "TRUE" || expected.toUpperCase() === "ON"){
+                if (dataType === "checkbox") {
+                    if (expected.toUpperCase() === "TRUE" || expected.toUpperCase() === "ON") {
                         expected = "true"
-                    }else if(expected.toUpperCase() === "FALSE" || expected.toUpperCase() === "OFF"){
+                    } else if (expected.toUpperCase() === "FALSE" || expected.toUpperCase() === "OFF") {
                         expected = "false"
                     }
                 }
-                
+
                 var values = value.split(';;');
                 var matchingExpected = $.grep(values,
                     function (o) {
@@ -236,7 +236,7 @@
                 return matchingExpected.length > 0;
             },
             IsNot: function (value, unexpected, dataType) {
-                if(value == null){
+                if (value == null) {
                     return (unexpected != value);
                 }
                 var values = value.split(';;');
@@ -245,10 +245,10 @@
                         return o === unexpected;
                     });
 
-                if(dataType === "checkbox"){
-                    if(unexpected.toUpperCase() === "TRUE"|| unexpected.toUpperCase() === "ON"){
+                if (dataType === "checkbox") {
+                    if (unexpected.toUpperCase() === "TRUE" || unexpected.toUpperCase() === "ON") {
                         unexpected = "true"
-                    }else if(unexpected.toUpperCase() === "FALSE" || unexpected.toUpperCase() === "OFF"){
+                    } else if (unexpected.toUpperCase() === "FALSE" || unexpected.toUpperCase() === "OFF") {
                         unexpected = "false"
                     }
                 }
@@ -272,17 +272,32 @@
         };
 
         self.watch = function () {
+            // This is a special case for pikaday
+            // The only way around to pickup the value, for now, is to 
+            // subscribe to blur events 
+            $('.datepickerfield', self.form).blur(function () {
+                
+                if(this.value===""){
+                    // Here comes the hack                    
+                    // Force the hidden datepicker field the datepicker field
+                    var hiddenDatePickerField=this.id.substr(0,this.id.length-2);
+                    self.values[hiddenDatePickerField]="";
+                    $("#"+hiddenDatePickerField)[0].value="";
+                }
 
+                populateFieldValues(self.form, self.values, self.dataTypes);
+                //process the conditions
+                self.run();
+            });
             //subscribe to change events
             $("input, textarea, select", self.form).change(function () {
-                populateFieldValues(self.form, self.values,  self.dataTypes);
-
+                populateFieldValues(self.form, self.values, self.dataTypes);
                 //process the conditions
                 self.run();
             });
 
             //register all values from the current fields on the page
-            populateFieldValues(self.form, self.values,  self.dataTypes);
+            populateFieldValues(self.form, self.values, self.dataTypes);
 
             //the initial run-through of all the conditions
             self.run();
@@ -385,14 +400,14 @@
             function evaluateConditionVisibility(id, condition) {
                 var show = condition.actionType === "Show",
                     cachedResult = cachedResults[id];
-                
-                    var success;
-                    if(cachedResult === undefined){
-                        cachedResults[id] = show; // set default value to avoid circular issues
-                        success = (cachedResults[id] = evaluateCondition(id, condition));
-                    }else{
-                        success =    cachedResult;
-                    }
+
+                var success;
+                if (cachedResult === undefined) {
+                    cachedResults[id] = show; // set default value to avoid circular issues
+                    success = (cachedResults[id] = evaluateCondition(id, condition));
+                } else {
+                    success = cachedResult;
+                }
 
                 var visible = !(success ^ show);
                 return visible;

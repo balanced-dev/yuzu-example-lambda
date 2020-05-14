@@ -9,7 +9,7 @@
         vm.dashboard = {};
 
         vm.page = {
-            title: 'Yuzu Delivery Viewmodel Import',
+            title: 'Yuzu Integrate',
             navigation: [
                 {
                     'name': 'import',
@@ -22,7 +22,7 @@
         };
 
         $timeout(function () {
-            navigationService.syncTree({ tree: "YuzuDeliveryUmbracoImport", path: "0" });
+            navigationService.syncTree({ tree: "YuzuDeliveryUmbracoImport", path: "-1" });
         });
 
         vm.loading = false;

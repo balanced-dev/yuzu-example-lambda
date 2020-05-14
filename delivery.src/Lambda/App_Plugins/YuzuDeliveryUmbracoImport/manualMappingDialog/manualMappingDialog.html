@@ -1,0 +1,100 @@
+﻿<div class="yuzu-import-dialog umbracoDialog" ng-controller="Yuzu.Delivery.UmbracoImportViewModel.ManualMappingDialog as vm">
+
+    <form name="manualMapsDialogForm" no-validate val-form-manager>
+
+        <umb-editor-view>
+
+            <umb-editor-header name="vm.title"
+                               name-locked="true"
+                               hide-alias="true"
+                               hide-icon="true"
+                               hide-description="true">
+            </umb-editor-header>
+
+            <umb-editor-container>
+                <umb-load-indicator ng-if="vm.loading">
+                </umb-load-indicator>
+
+                <div class="umb-pane" ng-if="!vm.loading">
+
+                    <umb-box>
+                        <umb-box-header title="Connect a mapping type"></umb-box-header>
+                        <umb-box-content>
+
+                            <umb-control-group label="Valid types" ng-if="!vm.selectedInCode">
+
+                                <select ng-model="vm.viable" class="input-block-level">
+                                    <option ng-value="''">None</option>
+                                    <option ng-repeat="item in vm.viableItems" ng-selected="vm.viable == item" ng-value="item">{{item}}</option>
+                                </select>
+
+                            </umb-control-group>
+
+                            <umb-button type="button"
+                                        ng-if="!vm.selectedInCode"
+                                        button-style="success"
+                                        state="vm.buttonState.save"
+                                        label="Apply"
+                                        action="vm.submit()">
+                            </umb-button>
+
+                            <div ng-if="vm.selectedInCode">
+                                <strong>Mapped in code</strong>
+                                <p>{{vm.selectedInCode}}</p>
+                            </div>
+
+                        </umb-box-content>
+                    </umb-box>
+
+                    <umb-box>
+                        <umb-box-header title="Mapping Type Creation"></umb-box-header>
+                        <umb-box-content>
+
+                            <umb-control-group label="Options" ng-if="vm.generationOptions.length > 1">
+
+                                <select ng-model="vm.generationOption" class="input-block-level">
+                                    <option ng-repeat="option in vm.generationOptions" ng-selected="vm.generationOption.Id == option.id" ng-value="option">{{option.name}}</option>
+                                </select>
+
+                            </umb-control-group>
+
+                            <p style="margin: 5px 65px 25px 0px" ng-bind-html="vm.generationOption.description"></p>
+
+                            <p ng-if="vm.generationMessage" ng-bind-html="vm.generationMessage"></p>
+
+                            <umb-button type="button"
+                                        label="Generate Code"
+                                        button-style="success"
+                                        state="vm.buttonState.code"
+                                        action="vm.createCode()">
+                            </umb-button>
+
+
+                        </umb-box-content>
+                    </umb-box>
+
+                </div>
+
+            </umb-editor-container>
+
+            <umb-editor-footer>
+                <umb-editor-footer-content-right>
+                    <umb-button type="button"
+                                button-style="link"
+                                label="View All Manual Maps"
+                                action="vm.openActiveMaps()">
+                    </umb-button>
+                    <umb-button type="button"
+                                button-style="link"
+                                label-key="general_close"
+                                shortcut="esc"
+                                action="vm.close()">
+                    </umb-button>
+                </umb-editor-footer-content-right>
+            </umb-editor-footer>
+
+        </umb-editor-view>
+
+    </form>
+
+</div>

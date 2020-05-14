@@ -15,7 +15,7 @@
             "items": {
                 "properties": {
                     "image": {
-                        "$ref": "/dataImage"
+                        "$ref": "./dataImage.schema"
                     },
                     "quote": {
                         "type": "string"

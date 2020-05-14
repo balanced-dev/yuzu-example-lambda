@@ -1160,14 +1160,16 @@ input.umb-forms__page-name::-webkit-input-placeholder {
   text-align: center;
   margin: 15px 0 0 15px;
 }
-.umb-forms__actions a {
+.umb-forms__actions a,
+.umb-forms__actions span {
   margin: 0 0 10px;
   display: block;
   font-size: 18px;
   position: relative;
   cursor: pointer;
 }
-.umb-forms__actions a:hover {
+.umb-forms__actions a:hover,
+.umb-forms__actions span:hover {
   color: #03bfb3;
   text-decoration: none;
 }
@@ -1185,13 +1187,15 @@ input.umb-forms__page-name::-webkit-input-placeholder {
   margin-left: auto;
   padding-left: 10px;
 }
-.umb-forms__page-actions a {
+.umb-forms__page-actions a,
+.umb-forms__page-actions span {
   position: relative;
   color: #68676b;
   font-size: 18px;
   margin-right: 5px;
 }
-.umb-forms__page-actions a:hover {
+.umb-forms__page-actions a:hover,
+.umb-forms__page-actions span:hover {
   color: #03bfb3;
   text-decoration: none;
 }
@@ -2048,4 +2052,7 @@ a.umb-forms-workflow-preview__item:hover {
 .umb-forms-date-range-picker.daterange .dr-selections .dr-calendar .dr-range-switcher .dr-switcher i:hover:after,
 .umb-forms-date-range-picker.daterange .dr-selections .dr-calendar .dr-range-switcher .dr-switcher i:hover:before {
   background-color: #00aea2;
+}
+.umb-forms__validation-pattern {
+  margin-bottom: 5px !important;
 }

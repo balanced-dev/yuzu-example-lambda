@@ -46,6 +46,14 @@
         padding-right: 132px;
     }
 
+    .yuzu-import .isPage {
+        font-weight: bold;
+    }
+
+    .yuzu-import .isSubBlock {
+        font-weight: lighter;
+    }
+
     .yuzu-import .input-with-alias {
         margin-bottom: 10px;
     }
@@ -60,15 +68,23 @@
     .yuzu-import .umb-table-cell:last-of-type {
         -ms-flex: 0 0 200px;
         flex: 0 0 200px;
-        flex-direction: row-reverse;
     }
 
     .yuzu-import .umb-table-cell {
         justify-content: center;
     }
 
+    .yuzu-import .umb-table-cell.buttons {
+        justify-content: flex-start;
+    }
+
+
     .yuzu-import .umb-table-cell select {
         margin-bottom: 0px;
+    }
+
+    .yuzu-import .umb-table-cell a {
+        margin-left: 8px;
     }
 
     .yuzu-import .umb-table-cell.mapped {
@@ -87,4 +103,8 @@
 
     .yuzu-import-dialog.umbracoDialog .umb-pane {
         margin: 20px !important;
+    }
+
+    .yuzu-import .umb-button__icon {
+        margin-right: 0;
     }

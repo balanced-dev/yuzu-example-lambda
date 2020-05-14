@@ -22,10 +22,10 @@
                         }
                     },
                     "link": {
-                        "$ref": "/dataLink"
+                        "$ref": "./dataLink.schema"
                     },
                     "image": {
-                        "$ref": "/dataImage"
+                        "$ref": "./dataImage.schema"
                     },
                     "isRightAligned": {
                         "type": "boolean"

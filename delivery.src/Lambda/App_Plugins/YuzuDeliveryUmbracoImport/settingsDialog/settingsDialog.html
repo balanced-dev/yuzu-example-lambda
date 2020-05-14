@@ -36,7 +36,17 @@
                         </umb-box-content>
                     </umb-box>
 
-                    <umb-box ng-if="vm.storeContentAs.type == 0">
+                    <umb-box ng-if="!vm.isValidType(vm.storeContentAs.type)" class="bg-danger">
+                        <umb-box-content>
+                            <h4>Not Available</h4>
+                            <hr>
+                            <p>
+                                {{vm.validationErrors[vm.storeContentAs.type]}}
+                            </p>
+                        </umb-box-content>
+                    </umb-box>
+
+                    <umb-box ng-if="vm.showType(0)">
                         <umb-box-content>
                             <umb-control-group label="Document Type Name">
                                 <input type="text" class="umb-textstring textstring input-block-level" ng-model="vm.item.documentTypeName">
@@ -44,7 +54,7 @@
                         </umb-box-content>
                     </umb-box>
 
-                    <umb-box ng-if="vm.storeContentAs.type == 1 || vm.storeContentAs.type == 2">
+                    <umb-box ng-if="vm.showType(1) || vm.showType(2)">
                         <umb-box-content>
                             <h4>Schema</h4>
                             <umb-control-group label="Merge with Document Type">
@@ -61,7 +71,7 @@
                         </umb-box-content>
                     </umb-box>
 
-                    <umb-box ng-if="vm.storeContentAs.type == 1">
+                    <umb-box ng-if="vm.showType(1)">
                         <umb-box-content>
                             <h4>Content</h4>
                             <umb-control-group label="Parent Node" required="true">
@@ -70,10 +80,6 @@
                                 <span ng-messages="storeContactAsForm.parentContentId.$error" show-validation-on-submit>
                                     <span class="help-inline" ng-message="required"><localize key="general_required">Required</localize></span>
                                 </span>
-                            </umb-control-group>
-
-                            <umb-control-group label="Add Area Node">
-                                <umb-toggle checked="vm.storeContentAs.addAreaNode" on-click="vm.toggle()"></umb-toggle>
                             </umb-control-group>
 
                             <umb-control-group label="Primary Key Property Name" required="true">

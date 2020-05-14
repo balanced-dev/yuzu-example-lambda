@@ -18,6 +18,9 @@
                         <umb-control-group label="Active" description="Enable or disable the workflow">
                             <input type="checkbox" ng-model="model.workflow.active" />
                         </umb-control-group>
+                        <umb-control-group label="Include Sensitive Data" description="Include sensitive data when executing this workflow?">
+                            <input type="checkbox" ng-model="model.workflow.includeSensitiveData" ng-checked="model.workflow.includeSensitiveData == 1 ? true : false" />
+                        </umb-control-group>
                         <umb-control-group ng-repeat="setting in model.workflow.settings"
                                            label="{{setting.name}}"
                                            description="{{setting.description}}">

@@ -1,34 +1,34 @@
 ﻿<div name="ABCatalogContentListForm" class="yuzu-import" ng-controller="Yuzu.Delivery.UmbracoImportViewModel.List as vm">
 
-    <umb-box style="min-height: 78vh;">
+    <umb-box style="height: 78vh; overflow: auto;">
 
         <umb-box-content>
 
             <div ng-if="vm.isLoading" class="yuzu-import__info-page">
                 <img class="yuzu-import__info-page__logo" src="/App_Plugins/YuzuDeliveryUmbracoImport/assets/yuzu.svg" />
-                <h3>Yuzu Delivery Umbraco Import</h3>
+                <h3>Yuzu Integrate</h3>
                 <p>Loading... please wait</p>
             </div>
 
             <div ng-if="!vm.isActive && !vm.isLoading" class="yuzu-import__info-page">
                 <img class="yuzu-import__info-page__logo" src="/App_Plugins/YuzuDeliveryUmbracoImport/assets/yuzu.svg" />
-                <h3>Yuzu Delivery Import is not active</h3>
+                <h3>Yuzu Integrate is not active</h3>
                 <p><strong>To activate</strong>: web.config compilation should be set to debug and Yuzu Delivery Import config setting of IsActive should be true</p>
             </div>
 
             <div ng-if="vm.isActive && vm.licenseStatus == 0" class="yuzu-import__info-page">
                 <img class="yuzu-import__info-page__logo" src="/App_Plugins/YuzuDeliveryUmbracoImport/assets/yuzu.svg" />
-                <h3>Start using Yuzu Delivery Umbraco Import</h3>
+                <h3>Integrate</h3>
                 <p>Get your trial license or active an existing license</p>
                 <button class="btn btn-success" ng-click="vm.openLicenseDialog()" type="button">
-                    <span>Start Trial</span>
+                    <span>Get Started</span>
                 </button>
             </div>
 
             <div ng-if="vm.isActive && vm.licenseStatus == 3" class="yuzu-import__info-page">
                 <img class="yuzu-import__info-page__logo" src="/App_Plugins/YuzuDeliveryUmbracoImport/assets/yuzu.svg" />
-                <h3>Yuzu Delivery Umbraco Import license expired</h3>
-                <p>To continue using this software you must have an active license</br> more details at <a href="http://balanced.dev/yuzu/home">http://balanced.dev</a></p>
+                <h3>Yuzu Integrate license expired</h3>
+                <p>To continue using this service you must have an active license</br> more details at <a href="http://balanced.dev/yuzu">http://balanced.dev</a></p>
                 <button class="btn btn-success" ng-click="vm.openLicenseDialog()" type="button">
                     <span>Activate</span>
                 </button>
@@ -58,54 +58,75 @@
                 </div>
             </div>
 
-            <a href ng-click="vm.openLoggingDialog()" ng-if="vm.items && !vm.propertyGroups && !vm.isLoading">Logging Links</a>
-
             <div class="umb-table-condensed" ng-if="vm.items && !vm.propertyGroups && !vm.isLoading">
                 <div class="umb-table-head">
                     <div class="umb-table-row">
                         <div class="umb-table-cell not-fixed">
-                            Yuzu Viewmodel
+                            Yuzu ViewModel
                         </div>
                         <div class="umb-table-cell mapped">
                             Mapped
                         </div>
                         <div class="umb-table-cell">
-                            Umbraco DocumentType
+                            Umbraco Document Type
                         </div>
-                        <div class="umb-table-cell flx-s0 flx-g0" style="flex-basis: 85px;">
-
+                        <div class="umb-table-cell flx-s0 flx-g0" style="flex-basis: 300px;">
+                            <input type="text" placeholder="search" ng-model="vm.page.filter" ng-model-options="{ debounce: 500 }" ng-change="vm.search()" />
+                            <a href ng-click="vm.openToolsDialog()">
+                                <i class="icon-tools medium" style="line-height: 32px;"></i>
+                            </a>
+                            <a href ng-click="vm.openListSettingsDialog()">
+                                <i class="icon-filter-arrows medium" style="line-height: 32px;"></i>
+                            </a>
                         </div>
-                        <div class="umb-table-cell flx-s0 flx-g0" style="flex-basis: 85px;">
-
                         </div>
                     </div>
-                </div>
                 <div class="umb-table-body">
                     <div class="umb-table-row" ng-repeat="item in vm.items">
                         <div class="umb-table-cell not-fixed">
-                            <a href ng-click="vm.editItem(item.viewmodel)">
-                                {{item.viewmodel}}
+                            <a href ng-click="vm.editItem(item.viewmodel)" class="{{vm.viewmodelLabelClass(item)}}">
+                                {{item.viewmodelLabel}}
                             </a>
                         </div>
                         <div class="umb-table-cell mapped">
-                            <i ng-if="item.allMapped" class="icon icon-check color-green"></i>
-                            <i ng-if="!item.allMapped" class="icon icon-delete color-red"></i>
+                            <i ng-if="item.allMapped && !item.ignored" class="icon icon-check color-green"></i>
+                            <i ng-if="!item.allMapped && !item.ignored" class="icon icon-delete color-red"></i>
                         </div>
                         <div class="umb-table-cell">
-                            <input type="text" class="input-with-alias" ng-model="item.documentTypeName" />
+                            <input type="text" class="input-with-alias" ng-model="item.documentTypeName" ng-disabled="item.ignored" />
                             <div class="alias-label">{{item.documentTypeAlias}}</div>
                         </div>
-                        <div class="umb-table-cell flx-s0 flx-g0" style="flex-basis: 85px">
+                        <div class="umb-table-cell buttons flx-s0 flx-g0" style="flex-basis: 300px;">
                             <umb-button type="button"
                                         button-style="success"
-                                        label="Update"
+                                        label="{{ item.documentTypeAlias ? 'update' : 'create&nbsp;' }}"
                                         action="vm.changeDocumentType(item)"
                                         state="vm.buttonState.update[item.viewmodel]"
-                                        disabled="vm.isLoading">
-                        </div>
-                        <div class="umb-table-cell flx-s0 flx-g0" style="flex-basis: 85px;">
-                            <a class="btn" ng-if="item.isPage && item.allMapped" ng-click="vm.openContentDialog(item)">
-                                <span>Content</span>
+                                        disabled="vm.isLoading || item.ignored" />
+
+                            <a class="btn btn-danger" ng-if="vm.vButtons.canDelete(item)" ng-click="vm.deleteMapping(item.viewmodel)" title="Delete Mapping">
+                                <i class="icon-trash"></i>
+                            </a>
+                            <a class="btn" ng-if="vm.vButtons.canIgnore(item)" ng-click="vm.changeIgnore(true, item.viewmodel)">
+                                <i class="icon-remove"></i>
+                            </a>
+                            <a class="btn" ng-if="vm.vButtons.isMakeActiveBlocked(item)" ng-click="" title="Status change not available">
+                                <i class="icon-block"></i>
+                            </a>
+                            <a class="btn" ng-if="vm.vButtons.canRemoveIgnore(item)" ng-click="vm.changeIgnore(false, item.viewmodel)" title="Add to mapping">
+                                <i class="icon-add"></i>
+                            </a>
+                            <a class="btn" ng-click="vm.openManualMappingsDialog(item)" ng-if="vm.vButtons.canAddManualMapping(item)" title="Manual Mapping">
+                                <i class="icon-brackets"></i>
+                            </a>
+                            <a class="btn" ng-if="!vm.vButtons.canAddManualMapping(item)" ng-click="" title="Manual mapping not available">
+                                <i class="icon-block"></i>
+                            </a>
+                            <a class="btn" title="Example" ng-click="vm.openPreviewDialog(item)">
+                                <i class="icon-screensharing"></i>
+                            </a>
+                            <a class="btn" ng-if="item.isPage && item.allMapped" ng-click="vm.openContentDialog(item)" title="Import Content">
+                                <i class="icon-umb-content"></i>
                             </a>
                         </div>
                     </div>
@@ -130,7 +151,9 @@
                         <div class="umb-table-cell">
                             Umbraco Property Type
                         </div>
-                        <div class="umb-table-cell"></div>
+                        <div class="umb-table-cell">
+
+                        </div>
                     </div>
                 </div>
                 <div ng-repeat="group in vm.propertyGroups">
@@ -140,18 +163,21 @@
                             <div class="umb-table-cell block-types not-fixed">
 
                                 <span ng-if="property.config.isList">List of </span>
-                                <a href ng-if="property.config.isViewModel" ng-click="vm.editItem(property.config.typeName)">
+                                <a href ng-if="property.config.isViewModel && !property.ignored" ng-click="vm.editItem(property.config.typeName)">
                                     <strong>{{property.config.typeName}}</strong>
                                 </a>
-                                <span ng-if="!property.config.isViewModel && !property.config.isEnum">
+                                <span ng-if="(!property.config.isViewModel && !property.config.isEnum) || property.ignored">
                                     {{property.config.typeName}}
                                 </span>
 
                                 <div ng-if="property.config.allowedTypes.length > 0">
                                     <div ng-repeat="type in property.config.allowedTypes">
-                                        <a href ng-click="vm.editItem(type)">
+                                        <a href ng-click="vm.editItem(type)" ng-if="!property.ignored">
                                             <strong>{{type}}</strong><span ng-if="!$last">,</span>
                                         </a>
+                                        <span ng-if="property.ignored">
+                                            <strong>{{type}}</strong><span ng-if="!$last">,</span>
+                                        </span>
                                     </div>
                                 </div>
 
@@ -172,26 +198,42 @@
                                 </div>
                             </div>
                             <div class="umb-table-cell mapped">
-                                <i ng-if="property.isMapped" class="icon icon-check color-green"></i>
-                                <i ng-if="!property.isMapped" class="icon icon-delete color-red"></i>
+                                <i ng-if="property.isMapped && !property.ignored" class="icon icon-check color-green"></i>
+                                <i ng-if="!property.isMapped && !property.ignored" class="icon icon-delete color-red"></i>
                             </div>
                             <div class="umb-table-cell">
-                                <input type="text" class="input-with-alias" ng-model="property.contentPropertyTypeName" />
+                                <input type="text" class="input-with-alias" ng-model="property.contentPropertyTypeName" ng-disabled="property.ignored" />
                                 <div class="alias-label">{{property.ContentPropertyTypeAlias}}</div>
                             </div>
                             <div class="umb-table-cell">
-                                <select ng-model="property.contentDatatypeDefinitionId">
+                                <select ng-model="property.contentDatatypeDefinitionId" ng-disabled="property.ignored">
                                     <option ng-repeat="option in vm.types" ng-selected="property.contentDatatypeDefinitionId == option.id" ng-value="{{option.id}}">{{option.name}}</option>
                                 </select>
                             </div>
-                            <div class="umb-table-cell">
+                            <div class="umb-table-cell buttons">
                                 <umb-button type="button"
-                                            ng-if="!property.isMerged"
+                                            ng-if="!property.isMerged && property.config"
                                             button-style="success"
-                                            label="Update"
+                                            label="{{ property.isMapped ? 'update' : 'create&nbsp;' }}"
                                             action="vm.changeProperty(property)"
                                             state="vm.buttonState.update[property.viewmodelPropertyName]"
-                                            disabled="vm.isLoading">
+                                            disabled="vm.isLoading || (!property.isMapped && property.ignored)" />
+
+                                <a class="btn btn-danger" ng-if="vm.pButtons.canDelete(property)" ng-click="vm.deleteMapping(property.viewmodelName, property.ContentPropertyTypeAlias)" title="Unmap">
+                                    <i class="icon-trash"></i>
+                                </a>
+                                <a class="btn" ng-if="vm.pButtons.canIgnore(property)" ng-click="vm.changeIgnore(true, property.viewmodelName, property.viewmodelPropertyName)" title="Add to ignored">
+                                    <i class="icon-remove"></i>
+                                </a>
+                                <a class="btn" ng-if="vm.pButtons.isMakeActiveBlocked(property)" ng-click="" title="Status change not available">
+                                    <i class="icon-block"></i>
+                                </a>
+                                <a class="btn" ng-if="vm.pButtons.canRemoveIgnore(property)" ng-click="vm.changeIgnore(false, property.viewmodelName, property.viewmodelPropertyName)" title="Add to mapping">
+                                    <i class="icon-add"></i>
+                                </a>
+                                <a class="btn" ng-if="vm.pButtons.canAddManualMapping(property)" ng-click="vm.openManualMappingsDialog(undefined, property)" title="Manual Mapping">
+                                    <i class="icon-brackets"></i>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -242,13 +284,20 @@
 
         </umb-editor-footer-content-right>
 
-        <umb-editor-footer-content-right ng-if="!vm.propertyGroups">
+        <umb-editor-footer-content-right ng-if="!vm.propertyGroups && (vm.licenseStatus == 1 || vm.licenseStatus == 2)">
 
             <umb-button type="button"
                         button-style="success"
                         label="Refresh"
                         action="vm.refreshData()"
                         state="vm.buttonState.refresh"
+                        disabled="vm.isLoading" />
+
+            
+            <umb-button type="button"
+                        button-style="success"
+                        label="Map All Groups"
+                        action="vm.openAddGroupsDialog()"
                         disabled="vm.isLoading" />
 
             <umb-button type="button"

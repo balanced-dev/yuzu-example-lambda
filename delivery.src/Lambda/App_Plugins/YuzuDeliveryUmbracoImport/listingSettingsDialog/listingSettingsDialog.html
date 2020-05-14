@@ -1,0 +1,87 @@
+﻿<div class="yuzu-import-dialog umbracoDialog" ng-controller="Yuzu.Delivery.UmbracoImportViewModel.ListingSettingsDialog as vm">
+
+    <form name="listingSettingsForm" no-validate val-form-manager>
+
+        <umb-editor-view>
+
+            <umb-editor-header name="'Viewmodel Filtering'"
+                               name-locked="true"
+                               hide-alias="true"
+                               hide-icon="true"
+                               hide-description="true">
+            </umb-editor-header>
+
+            <umb-editor-container>
+                <umb-load-indicator ng-if="vm.loading">
+                </umb-load-indicator>
+
+                <div class="umb-pane" ng-if="!vm.loading">
+                    <umb-box>
+                        <umb-box-content>
+
+                            <umb-control-group label="Page Size">
+                                <select ng-model="vm.dialogData.pageSize">
+                                    <option ng-repeat="pageSize in vm.pageSizes" ng-selected="vm.dialogData.pageSize == item" ng-value="pageSize">{{pageSize}}</option>
+                                </select>
+                            </umb-control-group>
+
+                        </umb-box-content>
+                    </umb-box>
+
+                    <umb-box>
+                        <umb-box-content>
+
+                            <umb-control-group label="Display Active">
+                                <umb-toggle checked="vm.filters.active" on-click="vm.toggle('active')"></umb-toggle>
+                            </umb-control-group>
+
+                            <umb-control-group label="Display Ignored">
+                                <umb-toggle checked="vm.filters.ignored" on-click="vm.toggle('ignored')"></umb-toggle>
+                            </umb-control-group>
+
+                        </umb-box-content>
+                    </umb-box>
+
+                    <umb-box>
+                        <umb-box-content>
+
+                            <umb-control-group label="Display Pages">
+                                <umb-toggle checked="vm.filters.page" on-click="vm.toggle('page')"></umb-toggle>
+                            </umb-control-group>
+
+                            <umb-control-group label="Display Blocks">
+                                <umb-toggle checked="vm.filters.block" on-click="vm.toggle('block')"></umb-toggle>
+                            </umb-control-group>
+
+                            <umb-control-group label="Display Sub Vms">
+                                <umb-toggle checked="vm.filters.subVm" on-click="vm.toggle('subVm')"></umb-toggle>
+                            </umb-control-group>
+
+                        </umb-box-content>
+                    </umb-box>
+
+                </div>
+            </umb-editor-container>
+
+            <umb-editor-footer>
+                <umb-editor-footer-content-right>
+                    <umb-button type="button"
+                                button-style="link"
+                                label-key="general_close"
+                                shortcut="esc"
+                                action="vm.close()">
+                    </umb-button>
+                    <umb-button type="button"
+                                button-style="success"
+                                label-key="general_submit"
+                                action="vm.submit(listingSettingsForm)"
+                                state="vm.buttonState"
+                                disabled="vm.loading">
+                    </umb-button>
+                </umb-editor-footer-content-right>
+            </umb-editor-footer>
+        </umb-editor-view>
+
+    </form>
+
+</div>

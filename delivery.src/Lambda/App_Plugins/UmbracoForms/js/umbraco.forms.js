@@ -2055,6 +2055,8 @@ angular.module("umbraco").controller("UmbracoForms.Editors.Form.EntriesSettingsC
         vm.addColumn = addColumn;
         vm.removeColumn = removeColumn;
         vm.toggleConditions = toggleConditions;
+        vm.close = close;
+        vm.submit = submit;
 
         var oldFieldset = "";
         var oldContainers = "";
@@ -2069,7 +2071,7 @@ angular.module("umbraco").controller("UmbracoForms.Editors.Form.EntriesSettingsC
                 $scope.model.fieldset.condition.actionType = vm.actionTypes[0].value;
                 $scope.model.fieldset.condition.logicType = vm.logicTypes[0].value;
             }
-
+            
             oldFieldset = angular.copy($scope.model.fieldset);
             oldContainers = angular.copy($scope.model.fieldset.containers);
         }
@@ -2102,15 +2104,15 @@ angular.module("umbraco").controller("UmbracoForms.Editors.Form.EntriesSettingsC
             formService.deleteContainer($scope.model.fieldset, container);
         }
 
-        vm.close = function (model) {
-
+        function close(model) {
+            
             $scope.model.fieldset.containers = oldContainers;
-            $scope.model.fieldset.condition = oldFieldset;
+            $scope.model.fieldset = oldFieldset;
 
             editorService.close();
         };
 
-        vm.submit = function () {
+        function submit() {
             editorService.close();
         };
 
@@ -2147,16 +2149,16 @@ angular.module("umbraco").controller("UmbracoForms.Editors.Form.EntriesSettingsC
         vm.logicTypes = [];
         vm.operators = [];
         vm.mandatoryToggleText = "Field is mandatory";
-               
-        localizationService.localizeMany(
+
+
+        var localizeValidation = localizationService.localizeMany(
             [
                 "validation_validateAsEmail",
                 "validation_validateAsNumber",
                 "validation_validateAsUrl",
                 "validation_enterCustomValidation",
                 "validation_fieldIsMandatory"]
-        ).then(function(labels){
-
+        ).then(function (labels) {
             vm.validationTypes = [{
                 "name": labels[0],
                 "key": "email",
@@ -2195,6 +2197,7 @@ angular.module("umbraco").controller("UmbracoForms.Editors.Form.EntriesSettingsC
         vm.toggleConditions = toggleConditions;
         vm.toggleMandatory = toggleMandatory;
         vm.toggleSensitiveData = toggleSensitiveData;
+        vm.matchValidationType = matchValidationType;
 
 
         //Creating duplicate of the fields array on the model
@@ -2272,37 +2275,37 @@ angular.module("umbraco").controller("UmbracoForms.Editors.Form.EntriesSettingsC
 
             if ($scope.model.field.regex !== null && $scope.model.field.regex !== "" && $scope.model.field.regex !== undefined) {
 
-                var match = false;
-
-                // find and show if a match from the list has been chosen
-                angular.forEach(vm.validationTypes, function (validationType, index) {
-                    if ($scope.model.field.regex === validationType.pattern) {
-                        vm.selectedValidationType = validationType;
-                        vm.showValidationPattern = true;
-                        match = true;
-                    }
-                });
-
-                // if there is no match - choose the custom validation option.
-                if (!match) {
-                    angular.forEach(vm.validationTypes, function (validationType) {
-                        if (validationType.key === "custom") {
+                return localizeValidation.then(function () {
+                    var match = false;
+                    // find and show if a match from the list has been chosen
+                    angular.forEach(vm.validationTypes, function (validationType, index) {
+                        if ($scope.model.field.regex === validationType.pattern) {
                             vm.selectedValidationType = validationType;
                             vm.showValidationPattern = true;
+                            match = true;
                         }
                     });
-                }
+                    if (!match) {
+                        // if there is no match - choose the custom validation option.
+                        angular.forEach(vm.validationTypes, function (validationType) {
+                            if (validationType.key === "custom") {
+                                vm.selectedValidationType = validationType;
+                                vm.showValidationPattern = true;
+                            }
+                        });
+                    }
+                });
             }
 
         }
 
-        function toggleConditions(){
+        function toggleConditions() {
             $scope.model.field.condition.enabled = !$scope.model.field.condition.enabled;
-        } 
-        function toggleSensitiveData(){
+        }
+        function toggleSensitiveData() {
             $scope.model.field.containsSensitiveData = !$scope.model.field.containsSensitiveData;
         }
-        function toggleMandatory(){
+        function toggleMandatory() {
             $scope.model.field.mandatory = !$scope.model.field.mandatory;
         }
         function changeValidationType(selectedValidationType) {

@@ -25,6 +25,21 @@ function settingsDialog($scope, formHelper, yuzuImportResources) {
         vm.contentTypes = response.data;
     });
 
+    yuzuImportResources.canApplySetting(vm.item.viewmodel).then(function (response) {
+        vm.validationErrors = response.data;
+    });
+
+    vm.isValidType = function (storeContentAsType) {
+        if (!vm.validationErrors)
+            return true;
+        else
+            return !(storeContentAsType in vm.validationErrors);
+    };
+
+    vm.showType = function (storeContentAsType) {
+        return vm.isValidType(storeContentAsType) && vm.storeContentAs.type === storeContentAsType;
+    };
+
     vm.change = function () {
         var newType = {};
         if (vm.storeContentAs.type === 0)
@@ -48,9 +63,6 @@ function settingsDialog($scope, formHelper, yuzuImportResources) {
 
     };
 
-    vm.toggle = function () {
-        vm.storeContentAs.addAreaNode = !vm.storeContentAs.addAreaNode;
-    };
 };
 
 angular.module("umbraco").controller("Yuzu.Delivery.UmbracoImportViewModel.SettingsDialog", settingsDialog);

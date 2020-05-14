@@ -28,15 +28,14 @@
                    placeholder="Untitled page (optional)">
 
                 <div class="umb-forms__page-actions -page" ng-if="form.pages.length > 1">
-                    <a href="">
+                    <span>
                         <i class="icon-trash" ng-click="togglePrompt(page)"></i>
-                        <umb-confirm-action
-                            ng-if="page.deletePrompt"
-                            direction="left"
-                            on-confirm="removePage(form.pages, $index)"
-                            on-cancel="hidePrompt(page)">
+                        <umb-confirm-action ng-if="page.deletePrompt"
+                                            direction="left"
+                                            on-confirm="removePage(form.pages, $index)"
+                                            on-cancel="hidePrompt(page)">
                         </umb-confirm-action>
-                    </a>
+                    </span>
                 </div>
             </div>
 
@@ -66,15 +65,14 @@
 
                         <div class="umb-forms__page-actions -fieldset" ng-if="!sortingMode">
                             <a href="" ng-click="editFieldset(fieldset)"><i class="icon-settings"></i></a>
-                            <a href="">
+                            <span>
                                 <i class="icon-trash" ng-click="togglePrompt(fieldset)"></i>
-                                <umb-confirm-action
-                                    ng-if="fieldset.deletePrompt"
-                                    direction="left"
-                                    on-confirm="removeFieldset(page, fieldset)"
-                                    on-cancel="hidePrompt(fieldset)">
+                                <umb-confirm-action ng-if="fieldset.deletePrompt"
+                                                    direction="left"
+                                                    on-confirm="removeFieldset(page, fieldset)"
+                                                    on-cancel="hidePrompt(fieldset)">
                                 </umb-confirm-action>
-                            </a>
+                            </span>
                         </div>
 
                     </div>
@@ -146,15 +144,14 @@
 
                                         <div class="umb-forms__actions" ng-if="sortingMode === false">
                                             <a href="" ng-click="openFieldSettings(field)"><i class="icon-settings"></i></a>
-                                            <a href="" ng-click="">
+                                            <span>
                                                 <i class="icon-trash" ng-click="togglePrompt(field)"></i>
-                                                <umb-confirm-action
-                                                    ng-if="field.deletePrompt"
-                                                    direction="left"
-                                                    on-confirm="removeField(fieldset, container, field)"
-                                                    on-cancel="hidePrompt(field)">
+                                                <umb-confirm-action ng-if="field.deletePrompt"
+                                                                    direction="left"
+                                                                    on-confirm="removeField(fieldset, container, field)"
+                                                                    on-cancel="hidePrompt(field)">
                                                 </umb-confirm-action>
-                                            </a>
+                                            </span>
                                         </div>
 
                                     </div>

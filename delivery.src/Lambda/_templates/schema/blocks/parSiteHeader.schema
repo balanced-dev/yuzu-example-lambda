@@ -8,10 +8,10 @@
             "type": "string"
         },
         "nav": {
-            "$ref": "/parSiteNav"
+            "$ref": "./parSiteNav.schema"
         },
         "signUp": {
-            "$ref": "/dataLink"
+            "$ref": "./dataLink.schema"
         },
         "_ref": {
             "type": "string"

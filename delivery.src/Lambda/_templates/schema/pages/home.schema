@@ -5,14 +5,14 @@
     "type": "object",
     "properties": {
         "body": {
-            "$ref": "/dataRows",
+            "$ref": "./dataRows.schema",
             "anyOfType": "parRowBuilder"
         },
         "header": {
-            "$ref": "/parSiteHeader"
+            "$ref": "./parSiteHeader.schema"
         },
         "footer": {
-            "$ref": "/parSiteFooter"
+            "$ref": "./parSiteFooter.schema"
         }
     },
     "additionalProperties": false

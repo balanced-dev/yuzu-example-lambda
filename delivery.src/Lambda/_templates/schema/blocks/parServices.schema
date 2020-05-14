@@ -37,7 +37,7 @@
             "items": {
                 "properties": {
                     "image": {
-                        "$ref": "/dataImage"
+                        "$ref": "./dataImage.schema"
                     }
                 }
             }

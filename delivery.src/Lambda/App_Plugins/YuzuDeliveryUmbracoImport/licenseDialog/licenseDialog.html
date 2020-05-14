@@ -17,23 +17,18 @@
 
                 <div class="umb-pane" ng-if="!vm.loading">
 
-                    <umb-box ng-if="vm.licenseMessage">
-                        <umb-box-content>
-                            <p>{{vm.licenseMessage}}</p>
-                        </umb-box-content>
-                    </umb-box>
-
                     <umb-box ng-if="vm.licenseStatus == 0">
+                        <umb-box-header title="{{vm.licenseMessage}}"></umb-box-header>
                         <umb-box-content>
-                            <umb-control-group label="Email Address" required="true">
-                                <input type="text" class="umb-textstring textstring input-block-level" name="emailAddress" ng-model="vm.data.emailAddress" val-email required />
-
-                                <span ng-messages="createLicenseForm.emailAddress.$error" show-validation-on-submit>
+                            <p>Sign up at <a target="_blank" href="http://balanced.dev/account/sign-up/"><strong>Balanced Dev</strong></a> for an activation key</p>
+                            <p>or use a full licence key</p>
+                            <p>&nbsp;</p>
+                            <umb-control-group label="Trial or License Activation Key" required="true">
+                                <input type="text" class="umb-textstring textstring input-block-level" name="activationKey" ng-model="vm.data.activationKey" required />
+                                <span ng-messages="createLicenseForm.activationKey.$error" show-validation-on-submit>
                                     <span class="help-inline" ng-message="required"><localize key="general_required">Required</localize></span>
-                                    <span class="help-inline" ng-message="valEmail"><localize key="general_email">Required</localize></span>
                                 </span>
                             </umb-control-group>
-                            <p>Activate your trial licence uisng your email address</p>
                         </umb-box-content>
                     </umb-box>
 

@@ -7,7 +7,7 @@
         "navLinks": {
             "type": "array",
             "items": {
-                "$ref": "/dataLink"
+                "$ref": "./dataLink.schema"
             }
         },
         "_ref": {

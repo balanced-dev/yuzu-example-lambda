@@ -8,6 +8,12 @@
     "~/App_Plugins/YuzuDeliveryUmbracoImport/contentDialog/contentDialog.controller.js",
     "~/App_Plugins/YuzuDeliveryUmbracoImport/settingsDialog/settingsDialog.controller.js",
     "~/App_Plugins/YuzuDeliveryUmbracoImport/licenseDialog/licenseDialog.controller.js",
-    "~/App_Plugins/YuzuDeliveryUmbracoImport/loggingDialog/loggingDialog.controller.js"
+    "~/App_Plugins/YuzuDeliveryUmbracoImport/loggingDialog/loggingDialog.controller.js",
+    "~/App_Plugins/YuzuDeliveryUmbracoImport/listingSettingsDialog/listingSettingsDialog.controller.js",
+    "~/App_Plugins/YuzuDeliveryUmbracoImport/manualMappingDialog/manualMappingDialog.controller.js",
+    "~/App_Plugins/YuzuDeliveryUmbracoImport/manualMappingDialog/manualMappingAllDialog.controller.js",
+    "~/App_Plugins/YuzuDeliveryUmbracoImport/previewDialog/previewDialog.controller.js",
+    "~/App_Plugins/YuzuDeliveryUmbracoImport/toolsDialog/toolsDialog.controller.js",
+    "~/App_Plugins/YuzuDeliveryUmbracoImport/addGroupsDialog/addGroupsDialog.controller.js"
   ]
 }

@@ -30,7 +30,7 @@
             "type": "string"
         },
         "moreLink": {
-            "$ref": "/dataLink"
+            "$ref": "./dataLink.schema"
         },
         "_ref": {
             "type": "string"

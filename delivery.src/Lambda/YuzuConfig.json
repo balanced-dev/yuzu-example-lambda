@@ -1,3 +1,6 @@
 {
-  "models": {}
+  "models": {},
+  "ignoreViewmodels": [],
+  "ignoreViewmodelProperties": [],
+  "manualMappers": []
 }
