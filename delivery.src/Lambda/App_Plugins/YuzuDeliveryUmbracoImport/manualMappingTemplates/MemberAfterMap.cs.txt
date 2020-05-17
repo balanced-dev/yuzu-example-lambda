@@ -8,6 +8,14 @@ using YuzuDelivery.UmbracoModels;
 
 namespace {{namespace}}
 {   
+    public class {{name}}Config : YuzuMappingConfig
+    {
+        public {{name}}Config()
+        {
+            ManualMaps.AddPropertyAfter<{{name}}, {{dest}}, String>(x => x.{{destMemberName}});
+        }
+    }
+
     public class {{name}} : IYuzuPropertyAfterResolver<{{source}}, {{destMember}}>
     {
         public {{destMember}} Apply({{destMember}} value)

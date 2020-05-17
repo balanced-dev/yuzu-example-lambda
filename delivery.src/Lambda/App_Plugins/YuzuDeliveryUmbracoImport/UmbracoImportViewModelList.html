@@ -6,7 +6,7 @@
 
             <div ng-if="vm.isLoading" class="yuzu-import__info-page">
                 <img class="yuzu-import__info-page__logo" src="/App_Plugins/YuzuDeliveryUmbracoImport/assets/yuzu.svg" />
-                <h3>Yuzu Integrate</h3>
+                <h3>Integrate</h3>
                 <p>Loading... please wait</p>
             </div>
 
@@ -20,8 +20,8 @@
                 <img class="yuzu-import__info-page__logo" src="/App_Plugins/YuzuDeliveryUmbracoImport/assets/yuzu.svg" />
                 <h3>Integrate</h3>
                 <p>Get your trial license or active an existing license</p>
-                <button class="btn btn-success" ng-click="vm.openLicenseDialog()" type="button">
-                    <span>Get Started</span>
+                <button class="btn btn-success" ng-click="vm.openLicenseDialog()" type="button" style="font-size: 22px; line-height: 35px;">
+                    <span>Begin</span>
                 </button>
             </div>
 
@@ -255,10 +255,13 @@
     </umb-box>
 
 
-    <umb-editor-footer style="left:0;" ng-if="vm.isActive">
+    <umb-editor-footer style="left:0;">
 
-        <umb-editor-footer-content-left ng-if="vm.licenseStatus == 1 || vm.licenseStatus == 2">
-            <a href ng-click="vm.openLicenseDialog()">{{vm.licenseMessage}}</a>
+        <umb-editor-footer-content-left>
+            &copy; 2020 <a target="_blank" href="http://www.hifi.agency">Hi-Fi Ltd</a>
+            <span ng-if="vm.licenseStatus == 1 || vm.licenseStatus == 2">
+                : <a href ng-click="vm.openLicenseDialog()">{{vm.licenseMessage}}</a>
+            </span>
         </umb-editor-footer-content-left>
 
         <umb-editor-footer-content-right ng-if="vm.propertyGroups">

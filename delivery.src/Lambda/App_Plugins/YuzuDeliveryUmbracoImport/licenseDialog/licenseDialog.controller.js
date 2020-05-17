@@ -1,6 +1,6 @@
 ﻿var app = angular.module("umbraco");
 
-function licenseDialog($scope, formHelper, yuzuImportResources) {
+function licenseDialog($scope, formHelper, notificationsService, yuzuImportResources) {
 
     var vm = this;
 
@@ -15,7 +15,20 @@ function licenseDialog($scope, formHelper, yuzuImportResources) {
             yuzuImportResources.activateLicense(vm.data)
                 .then(function (response) {
                     vm.licenseStatus = response.data.licenseStatus;
-                    vm.licenseMessage = response.data.licenseMessage;
+                    vm.licenseName = response.data.licenseName;
+                    vm.licenseEmail = response.data.licenseEmail;
+                    vm.licenseKey = response.data.licenseKey;
+
+                    if (vm.licenseStatus === 2) {
+                        vm.buttonState = "success";
+                        notificationsService.success("License Activated");
+                        $scope.model.close();
+                    }
+                    else {
+                        vm.buttonState = "error";
+                        notificationsService.error("License Activation Error", response.data.licenseMessage);
+                    }
+
                 });
         }
 
@@ -24,10 +37,23 @@ function licenseDialog($scope, formHelper, yuzuImportResources) {
     vm.close = $scope.model.close;
 
     vm.deactivateLicense = function () {
+
+        vm.buttonState = "busy";
+
         yuzuImportResources.deactivateLicense()
             .then(function (response) {
                 vm.licenseStatus = response.data.licenseStatus;
                 vm.licenseMessage = response.data.licenseMessage;
+
+                if (response.data.licenseStatus === 2) {
+                    vm.buttonState = "success";
+                    notificationsService.error("License Deactivation Error", response.data.licenseMessage);
+                }
+                else {
+                    vm.buttonState = "success";
+                    notificationsService.success("License Deactivated");
+                }
+
             });
     };
 
@@ -35,6 +61,9 @@ function licenseDialog($scope, formHelper, yuzuImportResources) {
         .then(function (response) {
             vm.licenseStatus = response.data.licenseStatus;
             vm.licenseMessage = response.data.licenseMessage;
+            vm.licenseName = response.data.licenseName;
+            vm.licenseEmail = response.data.licenseEmail;
+            vm.licenseKey = response.data.licenseKey;
         });
 
     vm.data = {};
