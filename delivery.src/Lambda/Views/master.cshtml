@@ -25,13 +25,13 @@
 
     <script src="/yuzu-def-ui/websocketClient.js" defer></script>
 
-    @(Html.RenderYuzu<vmBlock_SiteHeader>(root.Header))
+    @(Html.RenderYuzu<vmBlock_SiteHeader>(root))
 
     <div class="content-root">
         @RenderBody()
     </div>
 
-    @(Html.RenderYuzu<vmBlock_SiteFooter>(root.Footer))
+    @(Html.RenderYuzu<vmBlock_SiteFooter>(root))
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>

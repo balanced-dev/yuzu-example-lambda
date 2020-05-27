@@ -1,4 +1,0 @@
-Could not find any UmbracoForms licensing files in C:\Frontend Projects\Yuzu Examples\Lambda\delivery.src\Lambda\bin:
-Could not find any UmbracoForms licensing files in C:\Frontend Projects\Yuzu Examples\Lambda\delivery.src\Lambda\bin:
-Could not find any UmbracoForms licensing files in C:\Frontend Projects\Yuzu Examples\Lambda\delivery.src\Lambda\bin:
-Could not find any UmbracoForms licensing files in C:\Frontend Projects\Yuzu Examples\Lambda\delivery.src\Lambda\bin:
