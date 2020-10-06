@@ -102,7 +102,8 @@
                                         label="{{ item.documentTypeAlias ? 'update' : 'create&nbsp;' }}"
                                         action="vm.changeDocumentType(item)"
                                         state="vm.buttonState.update[item.viewmodel]"
-                                        disabled="vm.isLoading || item.ignored" />
+                                        disabled="vm.isLoading || item.ignored">
+                            </umb-button>
 
                             <a class="btn btn-danger" ng-if="vm.vButtons.canDelete(item)" ng-click="vm.deleteMapping(item.viewmodel)" title="Delete Mapping">
                                 <i class="icon-trash"></i>
@@ -217,7 +218,8 @@
                                             label="{{ property.isMapped ? 'update' : 'create&nbsp;' }}"
                                             action="vm.changeProperty(property)"
                                             state="vm.buttonState.update[property.viewmodelPropertyName]"
-                                            disabled="vm.isLoading || (!property.isMapped && property.ignored)" />
+                                            disabled="vm.isLoading || (!property.isMapped && property.ignored)">
+                                </umb-button>
 
                                 <a class="btn btn-danger" ng-if="vm.pButtons.canDelete(property)" ng-click="vm.deleteMapping(property.viewmodelName, property.ContentPropertyTypeAlias)" title="Unmap">
                                     <i class="icon-trash"></i>
@@ -276,14 +278,16 @@
                         label="Refresh"
                         action="vm.editItem(vm.item.viewmodel)"
                         state="vm.buttonState.refresh"
-                        disabled="vm.isLoading" />
+                        disabled="vm.isLoading">
+            </umb-button>
 
             <umb-button type="button"
                         button-style="success"
                         label="Map All Properties"
                         action="vm.changeDocumentTypeLocal()"
                         state="vm.buttonState.updateAll"
-                        disabled="vm.isLoading" />
+                        disabled="vm.isLoading">
+            </umb-button>
 
         </umb-editor-footer-content-right>
 
@@ -294,21 +298,24 @@
                         label="Refresh"
                         action="vm.refreshData()"
                         state="vm.buttonState.refresh"
-                        disabled="vm.isLoading" />
+                        disabled="vm.isLoading">
+            </umb-button>
 
             
             <umb-button type="button"
                         button-style="success"
                         label="Map All Groups"
                         action="vm.openAddGroupsDialog()"
-                        disabled="vm.isLoading" />
+                        disabled="vm.isLoading">
+            </umb-button>
 
             <umb-button type="button"
                         button-style="success"
                         label="Map All Viewmodels"
                         action="vm.changeDocumentTypes($event)"
                         state="vm.buttonState.updateAll"
-                        disabled="vm.isLoading" />
+                        disabled="vm.isLoading">
+            </umb-button>
 
         </umb-editor-footer-content-right>
 

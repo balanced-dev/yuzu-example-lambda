@@ -13,7 +13,7 @@
                     name="preValueSource.name"
                     hide-icon="true"
                     hide-description="true"
-                    hide-alias="true">
+                    hide-alias="true"> 
             </umb-editor-header>
 
 
@@ -24,7 +24,7 @@
                     <umb-box-content>
 
                         <umb-control-group label="Type" description="Select the type of prevalue source">
-                            <select ng-model="preValueSource.fieldPreValueSourceTypeId" ng-options="type.id as type.name for type in types" ng-change="setType()">
+                            <select ng-model="preValueSource.fieldPreValueSourceTypeId" ng-options="type.id as type.name for type in types" ng-change="setType()" data-umb="settingstype-pickers-fieldPreValueSourceType">
                                 <option value="">-- choose type --</option>
                             </select>
                         </umb-control-group>
@@ -37,14 +37,14 @@
 
 
 
-                        <table ng-show="prevalues" class="table table-striped">
+                        <table ng-show="prevalues" class="table table-striped" data-umb="prevalues">
                             <tr>
                                 <th>Id</th>
                                 <th>Value</th>
                             </tr>
                             <tr ng-repeat="prevalue in prevalues">
-                                <td>{{prevalue.id}}</td>
-                                <td>{{prevalue.value}}</td>
+                                <td data-umb="prevalueId_{{$index}}">{{prevalue.id}}</td>
+                                <td data-umb="prevalue_{{$index}}">{{prevalue.value}}</td>
                             </tr>
                         </table>
 

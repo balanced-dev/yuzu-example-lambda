@@ -34,7 +34,7 @@
                                 ng-click="vm.pickFieldType(fieldType)"
                                 class="-four-in-row">
                                 <a class="umb-card-grid-item" href="" title="{{ fieldType.name }}">
-                                    <i ng-class="fieldType.icon"></i>
+                                    <i ng-class="fieldType.icon" data-umb="field-type-picker-fieldType_{{$index}}"></i>
                                     {{ fieldType.name }}
                                 </a>
                             </li>
@@ -49,7 +49,7 @@
                     <umb-button type="button"
                                 button-style="link"
                                 label-key="general_close"
-                                action="vm.close()">
+                                action="vm.close()" data-umb="field-type-picker-close">
                     </umb-button>
                 </umb-editor-footer-content-right>
             </umb-editor-footer>

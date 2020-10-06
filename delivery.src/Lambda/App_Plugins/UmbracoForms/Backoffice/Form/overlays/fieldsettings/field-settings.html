@@ -1,4 +1,4 @@
-<div class="content-type-editor-dialog edit-property-settings" ng-controller="UmbracoForms.Overlays.FieldSettingsOverlay as vm">
+<div class="content-type-editor-dialog edit-property-settings" ng-controller="UmbracoForms.Overlays.FieldSettingsOverlay as vm" data-umb="field-setting-editor">
 
     <umb-load-indicator ng-if="vm.loading"></umb-load-indicator>
 
@@ -29,7 +29,7 @@
                                       focus-on-filled="true"
                                       umb-auto-resize
                                       required 
-                                      ng-keypress="vm.submitOnEnter($event)">
+                                      ng-keypress="vm.submitOnEnter($event)" data-umb="field-settings-enter-question">
                             </textarea>
                             <div ng-messages="fieldsSettingsForm.propertyLabel.$error" show-validation-on-submit>
                                 <span class="umb-validation-label" ng-message="required">Required label</span>
@@ -39,7 +39,7 @@
                         <div class="umb-control-group control-group">
                             <umb-generate-alias enable-lock="true"
                                                 alias-from="model.field.caption"
-                                                alias="model.field.alias">
+                                                alias="model.field.alias"  data-umb="field-settings-enter-alias">
                             </umb-generate-alias>
                         </div>
 
@@ -55,7 +55,7 @@
 
                         <!-- Field type -->
                         <div class="editor-wrapper umb-control-group control-group" ng-model="model.field.fieldTypeId" val-require-component>
-                            <a href="" ng-if="!model.field.fieldTypeId" class="editor-placeholder forms-question-type" ng-click="vm.openFieldTypePicker(model.field)">Choose answer type</a>
+                            <a href="" ng-if="!model.field.fieldTypeId" class="editor-placeholder forms-question-type" ng-click="vm.openFieldTypePicker(model.field)"  data-umb="field-settings-choose-answer-type">Choose answer type</a>
 
                             <div class="editor clearfix" ng-if="model.field.fieldTypeId">
                                 <a href="" class="editor-icon-wrapper" ng-click="vm.openFieldTypePicker(model.field)">
@@ -241,12 +241,12 @@
                     <umb-button type="button"
                                 button-style="link"
                                 label-key="general_close"
-                                action="vm.close()">
+                                action="vm.close()" data-umb="field-settings-close">
                     </umb-button>
                     <umb-button type="button"
                                 button-style="success"
                                 label-key="general_submit"
-                                action="vm.submit()">
+                                action="vm.submit()" data-umb="field-settings-submit">
                     </umb-button>
                 </umb-editor-footer-content-right>
             </umb-editor-footer>

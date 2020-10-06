@@ -166,7 +166,7 @@
                         <div ng-repeat="row in records.results"
                              ng-click="toggleRow(row)"
                              ng-class="{'-selected': row.selected, '-selectable': true}"
-                             class="umb-table-row umb-user-table-row">
+                             class="umb-table-row umb-user-table-row" data-umb="record_entry_{{$index}}">
                             <div class="umb-table-cell umb-user-table-col-avatar not-fixed" scope="row"
                                  style="width: 70px; padding:10px 15px;">
                                 <i class="umb-table-body__icon umb-table-body__fileicon icon-categories"></i>
@@ -184,9 +184,9 @@
 
                                     <!-- if the field is of view = 'file' (Show filename, not path & link) -->
                                     <div ng-switch-when="file">
-                                        <a class="umb-table-body__link" href=""
+                                        <a class="umb-table-body__link" href="" 
                                            ng-click="vm.viewEntryDetails(records.schema, row, $event)"
-                                           ng-if="$index === 0">{{ field | fileName }}</a>
+                                           ng-if="$index === 0">{{ field | fileName }} </a>
                                         <span ng-if="$index > 0">{{ field |  fileName }}</span>
                                     </div>
                                     <div ng-switch-when="member">
@@ -197,13 +197,13 @@
                                     </div>
                                     <div ng-switch-when="date">
                                         <!-- TODO: Get the users locale & determine best time format for date filter -->
-                                        <a class="umb-table-body__link" href=""
+                                        <a class="umb-table-body__link" href="" 
                                            ng-click="vm.viewEntryDetails(records.schema, row, $event)"
                                            ng-if="$index === 0">{{ field | date : 'dd MMM yy @ HH:mm:ss' }}</a>
                                         <span>{{ field | momentDateTimeZone : 'LLL' }}</span>
                                     </div>
                                     <div ng-switch-default>
-                                        <a class="umb-table-body__link" href=""
+                                        <a class="umb-table-body__link" href="" 
                                            ng-click="vm.viewEntryDetails(records.schema, row, $event)"
                                            ng-if="$index === 0"> {{(field || "&#x3C;Empty&#x3E;") | truncate:false:20
                                             }}</a>

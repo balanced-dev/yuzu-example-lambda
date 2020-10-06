@@ -24,14 +24,14 @@
                     <umb-box-content>
 
                         <umb-control-group label="Type" description="Select the type of data source">
-                            <select ng-model="dataSource.formDataSourceTypeId" ng-options="type.id as type.name for type in types" ng-change="setType()">
+                            <select ng-model="dataSource.formDataSourceTypeId" ng-options="type.id as type.name for type in types" ng-change="setType()" data-umb="settingstype-pickers-dataSourceType">
                                 <option value="">-- choose type --</option>
                             </select>
                         </umb-control-group>
 
 
                         <umb-control-group ng-repeat="setting in dataSource.$type.settings" label="{{setting.name}}" description="{{setting.description}}">
-                            <div ng-include="setting.view"></div>
+                            <div ng-include="setting.view" data-umb="setting-dataSource_{{$index}}"></div>
                         </umb-control-group>
 
                        

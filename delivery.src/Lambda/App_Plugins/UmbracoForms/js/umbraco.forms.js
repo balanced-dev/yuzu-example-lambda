@@ -3498,6 +3498,18 @@ function exportResource($http) {
 
 angular.module('umbraco.resources').factory('exportResource', exportResource);
 
+function fieldResource($http) {
+
+    var apiRoot = "backoffice/UmbracoForms/Field/";
+    
+    return {
+        validateSettings: function (field) {
+            return $http.post(apiRoot + "ValidateSettings", field);
+        }
+    };
+}
+
+angular.module('umbraco.resources').factory('fieldResource', fieldResource);
 /**
     * @ngdoc service
     * @name umbraco.resources.dashboardResource
@@ -4715,7 +4727,8 @@ angular.module("umbraco.directives")
                 view: '=',
                 field: '=',
                 sensitive: '=',
-                hasAccess: '='
+                hasAccess: '=',
+                name: '='
             }
         };
 

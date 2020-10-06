@@ -1,5 +1,5 @@
 ﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\packages\UmbracoCms.8.6.1\build\UmbracoCms.props" Condition="Exists('..\packages\UmbracoCms.8.6.1\build\UmbracoCms.props')" />
+  <Import Project="..\packages\UmbracoCms.8.7.0\build\UmbracoCms.props" Condition="Exists('..\packages\UmbracoCms.8.7.0\build\UmbracoCms.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -205,11 +205,11 @@
     <Reference Include="Serilog.Sinks.Map, Version=1.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
       <HintPath>..\packages\Serilog.Sinks.Map.1.0.0\lib\netstandard2.0\Serilog.Sinks.Map.dll</HintPath>
     </Reference>
-    <Reference Include="Skybrud.Essentials, Version=1.1.12.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Skybrud.Essentials.1.1.12\lib\net47\Skybrud.Essentials.dll</HintPath>
+    <Reference Include="Skybrud.Essentials, Version=1.1.20.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Skybrud.Essentials.1.1.20\lib\net47\Skybrud.Essentials.dll</HintPath>
     </Reference>
     <Reference Include="Skybrud.Umbraco.GridData, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Skybrud.Umbraco.GridData.3.0.0-beta003\lib\net472\Skybrud.Umbraco.GridData.dll</HintPath>
+      <HintPath>..\packages\Skybrud.Umbraco.GridData.3.0.0\lib\net472\Skybrud.Umbraco.GridData.dll</HintPath>
     </Reference>
     <Reference Include="Superpower, Version=1.0.0.0, Culture=neutral, PublicKeyToken=aec39280ded1b3a7, processorArchitecture=MSIL">
       <HintPath>..\packages\Superpower.2.0.0\lib\net45\Superpower.dll</HintPath>
@@ -286,49 +286,49 @@
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
     <Reference Include="Umbraco.Core, Version=8.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\UmbracoCms.Core.8.6.1\lib\net472\Umbraco.Core.dll</HintPath>
+      <HintPath>..\packages\UmbracoCms.Core.8.7.0\lib\net472\Umbraco.Core.dll</HintPath>
     </Reference>
     <Reference Include="Umbraco.Examine, Version=8.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\UmbracoCms.Web.8.6.1\lib\net472\Umbraco.Examine.dll</HintPath>
+      <HintPath>..\packages\UmbracoCms.Web.8.7.0\lib\net472\Umbraco.Examine.dll</HintPath>
     </Reference>
-    <Reference Include="Umbraco.Forms.Core, Version=8.4.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\UmbracoForms.Core.8.4.1\lib\net472\Umbraco.Forms.Core.dll</HintPath>
+    <Reference Include="Umbraco.Forms.Core, Version=8.5.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\UmbracoForms.Core.8.5.3\lib\net472\Umbraco.Forms.Core.dll</HintPath>
     </Reference>
-    <Reference Include="Umbraco.Forms.Core.Providers, Version=8.4.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\UmbracoForms.Core.8.4.1\lib\net472\Umbraco.Forms.Core.Providers.dll</HintPath>
+    <Reference Include="Umbraco.Forms.Core.Providers, Version=8.5.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\UmbracoForms.Core.8.5.3\lib\net472\Umbraco.Forms.Core.Providers.dll</HintPath>
     </Reference>
-    <Reference Include="Umbraco.Forms.Web, Version=8.4.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\UmbracoForms.Core.8.4.1\lib\net472\Umbraco.Forms.Web.dll</HintPath>
+    <Reference Include="Umbraco.Forms.Web, Version=8.5.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\UmbracoForms.Core.8.5.3\lib\net472\Umbraco.Forms.Web.dll</HintPath>
     </Reference>
     <Reference Include="Umbraco.Licensing, Version=2.0.33.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\UmbracoForms.Core.8.4.1\lib\net472\Umbraco.Licensing.dll</HintPath>
+      <HintPath>..\packages\UmbracoForms.Core.8.5.3\lib\net472\Umbraco.Licensing.dll</HintPath>
     </Reference>
     <Reference Include="Umbraco.ModelsBuilder.Embedded, Version=8.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\UmbracoCms.Web.8.6.1\lib\net472\Umbraco.ModelsBuilder.Embedded.dll</HintPath>
+      <HintPath>..\packages\UmbracoCms.Web.8.7.0\lib\net472\Umbraco.ModelsBuilder.Embedded.dll</HintPath>
     </Reference>
     <Reference Include="Umbraco.Web, Version=8.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\UmbracoCms.Web.8.6.1\lib\net472\Umbraco.Web.dll</HintPath>
+      <HintPath>..\packages\UmbracoCms.Web.8.7.0\lib\net472\Umbraco.Web.dll</HintPath>
     </Reference>
     <Reference Include="Umbraco.Web.UI, Version=8.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\UmbracoCms.Web.8.6.1\lib\net472\Umbraco.Web.UI.dll</HintPath>
+      <HintPath>..\packages\UmbracoCms.Web.8.7.0\lib\net472\Umbraco.Web.UI.dll</HintPath>
     </Reference>
-    <Reference Include="YuzuDelivery.Core, Version=1.0.44.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\YuzuDelivery.Core.1.0.44\lib\net472\YuzuDelivery.Core.dll</HintPath>
+    <Reference Include="YuzuDelivery.Core, Version=1.0.47.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\YuzuDelivery.Core.1.0.47\lib\net472\YuzuDelivery.Core.dll</HintPath>
     </Reference>
-    <Reference Include="YuzuDelivery.Umbraco.Core, Version=1.2.18.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\YuzuDelivery.Umbraco.Core.1.2.18\lib\net472\YuzuDelivery.Umbraco.Core.dll</HintPath>
+    <Reference Include="YuzuDelivery.Umbraco.Core, Version=1.2.22.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\YuzuDelivery.Umbraco.Core.1.2.22\lib\net472\YuzuDelivery.Umbraco.Core.dll</HintPath>
     </Reference>
-    <Reference Include="YuzuDelivery.Umbraco.Forms, Version=1.2.18.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\YuzuDelivery.Umbraco.Forms.1.2.18\lib\net472\YuzuDelivery.Umbraco.Forms.dll</HintPath>
+    <Reference Include="YuzuDelivery.Umbraco.Forms, Version=1.2.22.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\YuzuDelivery.Umbraco.Forms.1.2.22\lib\net472\YuzuDelivery.Umbraco.Forms.dll</HintPath>
     </Reference>
-    <Reference Include="YuzuDelivery.Umbraco.Grid, Version=1.2.18.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\YuzuDelivery.Umbraco.Grid.1.2.18\lib\net472\YuzuDelivery.Umbraco.Grid.dll</HintPath>
+    <Reference Include="YuzuDelivery.Umbraco.Grid, Version=1.2.22.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\YuzuDelivery.Umbraco.Grid.1.2.22\lib\net472\YuzuDelivery.Umbraco.Grid.dll</HintPath>
     </Reference>
     <Reference Include="YuzuDelivery.Umbraco.Import, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\YuzuDelivery.Umbraco.Import.1.0.83\lib\net472\YuzuDelivery.Umbraco.Import.dll</HintPath>
+      <HintPath>..\packages\YuzuDelivery.Umbraco.Import.1.0.88\lib\net472\YuzuDelivery.Umbraco.Import.dll</HintPath>
     </Reference>
-    <Reference Include="YuzuDelivery.Umbraco.Members, Version=1.2.18.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\YuzuDelivery.Umbraco.Members.1.2.18\lib\net472\YuzuDelivery.Umbraco.Members.dll</HintPath>
+    <Reference Include="YuzuDelivery.Umbraco.Members, Version=1.2.22.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\YuzuDelivery.Umbraco.Members.1.2.22\lib\net472\YuzuDelivery.Umbraco.Members.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -524,7 +524,9 @@
     <Content Include="config\Lang\zh-CN.user.xml" />
     <Content Include="config\logviewer.searches.config.js" />
     <Content Include="Global.asax" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Yuzu\Mappings\readme.txt" />
   </ItemGroup>
   <ItemGroup>
@@ -568,13 +570,15 @@
     <Content Include="config\imageprocessor\processing.config" />
     <Content Include="config\imageprocessor\cache.config" />
     <Content Include="App_Plugins\DocTypeGridEditor\Render\DocTypeGridEditorPreviewer.cshtml" />
-    <Content Include="Media\Web.config" />
     <Content Include="config\umbracoSettings.config" />
+    <Content Include="config\ClientDependency.config" />
+    <Content Include="App_Plugins\DocTypeGridEditor\Render\DocTypeGridEditor.cshtml" />
+    <Content Include="App_Plugins\DocTypeGridEditor\package.manifest" />
+    <Content Include="Media\Web.config" />
     <Content Include="config\tinyMceConfig.config" />
     <Content Include="config\serilog.user.config" />
     <Content Include="config\serilog.config" />
     <Content Include="config\HealthChecks.config" />
-    <Content Include="config\ClientDependency.config" />
     <Content Include="config\BackOfficeTours\getting-started.json" />
     <Content Include="App_Plugins\UmbracoForms\UmbracoForms.config" />
     <Content Include="App_Plugins\UmbracoForms\RazorTemplates\HtmlTable.cshtml" />
@@ -585,8 +589,6 @@
     <Content Include="App_Plugins\UmbracoForms\Data\Web.config" />
     <Content Include="App_Plugins\UmbracoForms\Data\Templates\contactform.json" />
     <Content Include="App_Plugins\UmbracoForms\Data\Templates\commentform.json" />
-    <Content Include="App_Plugins\DocTypeGridEditor\Render\DocTypeGridEditor.cshtml" />
-    <Content Include="App_Plugins\DocTypeGridEditor\package.manifest" />
     <Content Include="App_Plugins\YuzuDeliveryViewModelsBuilder\package.manifest" />
     <Content Include="App_Plugins\YuzuBackofficeCss\package.manifest" />
     <Content Include="App_Plugins\YuzuBackofficeCss\DocTypeGridEditorPreviewer.cshtml" />
@@ -603,6 +605,7 @@
     <Content Include="Views\Partials\Grid\Editors\Base.cshtml" />
     <Content Include="Views\Partials\Grid\Bootstrap3.cshtml" />
     <Content Include="Views\Partials\Grid\Bootstrap3-Fluid.cshtml" />
+    <Content Include="Views\Partials\BlockList\Default.cshtml" />
     <Content Include="Views\Partials\Forms\Themes\default\Submitted.cshtml" />
     <Content Include="Views\Partials\Forms\Themes\default\ScrollToFormScript.cshtml" />
     <Content Include="Views\Partials\Forms\Themes\default\Script.cshtml" />
@@ -683,13 +686,13 @@
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
     <Error Condition="!Exists('..\packages\Umbraco.SqlServerCE.4.0.0.1\build\Umbraco.SqlServerCE.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Umbraco.SqlServerCE.4.0.0.1\build\Umbraco.SqlServerCE.targets'))" />
-    <Error Condition="!Exists('..\packages\UmbracoCms.8.6.1\build\UmbracoCms.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\UmbracoCms.8.6.1\build\UmbracoCms.props'))" />
-    <Error Condition="!Exists('..\packages\UmbracoCms.8.6.1\build\UmbracoCms.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\UmbracoCms.8.6.1\build\UmbracoCms.targets'))" />
-    <Error Condition="!Exists('..\packages\YuzuDelivery.Umbraco.Import.1.0.83\build\YuzuDelivery.Umbraco.Import.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\YuzuDelivery.Umbraco.Import.1.0.83\build\YuzuDelivery.Umbraco.Import.targets'))" />
+    <Error Condition="!Exists('..\packages\UmbracoCms.8.7.0\build\UmbracoCms.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\UmbracoCms.8.7.0\build\UmbracoCms.props'))" />
+    <Error Condition="!Exists('..\packages\UmbracoCms.8.7.0\build\UmbracoCms.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\UmbracoCms.8.7.0\build\UmbracoCms.targets'))" />
+    <Error Condition="!Exists('..\packages\YuzuDelivery.Umbraco.Import.1.0.88\build\YuzuDelivery.Umbraco.Import.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\YuzuDelivery.Umbraco.Import.1.0.88\build\YuzuDelivery.Umbraco.Import.targets'))" />
   </Target>
   <Import Project="..\packages\Umbraco.SqlServerCE.4.0.0.1\build\Umbraco.SqlServerCE.targets" Condition="Exists('..\packages\Umbraco.SqlServerCE.4.0.0.1\build\Umbraco.SqlServerCE.targets')" />
-  <Import Project="..\packages\UmbracoCms.8.6.1\build\UmbracoCms.targets" Condition="Exists('..\packages\UmbracoCms.8.6.1\build\UmbracoCms.targets')" />
-  <Import Project="..\packages\YuzuDelivery.Umbraco.Import.1.0.83\build\YuzuDelivery.Umbraco.Import.targets" Condition="Exists('..\packages\YuzuDelivery.Umbraco.Import.1.0.83\build\YuzuDelivery.Umbraco.Import.targets')" />
+  <Import Project="..\packages\UmbracoCms.8.7.0\build\UmbracoCms.targets" Condition="Exists('..\packages\UmbracoCms.8.7.0\build\UmbracoCms.targets')" />
+  <Import Project="..\packages\YuzuDelivery.Umbraco.Import.1.0.88\build\YuzuDelivery.Umbraco.Import.targets" Condition="Exists('..\packages\YuzuDelivery.Umbraco.Import.1.0.88\build\YuzuDelivery.Umbraco.Import.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

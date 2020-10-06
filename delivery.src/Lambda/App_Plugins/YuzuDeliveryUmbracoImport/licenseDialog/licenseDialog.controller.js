@@ -19,7 +19,7 @@ function licenseDialog($scope, formHelper, notificationsService, yuzuImportResou
                     vm.licenseEmail = response.data.licenseEmail;
                     vm.licenseKey = response.data.licenseKey;
 
-                    if (vm.licenseStatus === 2) {
+                    if (vm.licenseStatus === 1 || vm.licenseStatus === 2) {
                         vm.buttonState = "success";
                         notificationsService.success("License Activated");
                         $scope.model.close();
